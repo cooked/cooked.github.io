@@ -1,4 +1,4 @@
-remote-theme: andrewbanchich/forty-jekyll-theme
+remote_theme: "andrewbanchich/forty-jekyll-theme"
 
 # homepage tiles
 tiles-source: posts # accepts "posts" or "pages"
