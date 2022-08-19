@@ -1,6 +1,9 @@
 #theme: jekyll-theme-minimal
 remote_theme: pages-themes/minimal@v0.2.0
 
+# fixes this: https://talk.jekyllrb.com/t/error-your-site-could-not-be-built-no-repo-name-found/5688
+repository: cooked/cooked.github.io
+
 # https://jekyllrb.com/docs/plugins/installation/
 plugins:
 - jekyll-remote-theme # github remote themes
