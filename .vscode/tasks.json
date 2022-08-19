@@ -3,24 +3,34 @@
     // for the documentation about the tasks.json format
     "version": "2.0.0",
     "tasks": [
+        
         {
-            "label": "Serve",
+            "label": "Jekyll Build Install (install gems listed in Gemfile)",
             "type": "shell",
-            "command": "bundle exec jekyll serve --livereload",
+            "command": "bundle install",
             "group": {
-                "kind": "test",
+                "kind": "build",
                 "isDefault": true
             },
-            "isBackground": true,
         },
-        {
-            "label": "Build",
+        /*{
+            "label": "Jekyll Build (install gems listed in Gemfile",
             "type": "shell",
             "command": "bundle exec jekyll build",
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
+        },*/
+        {
+            "label": "Jekyll Serve (with livereload)",
+            "type": "shell",
+            "command": "bundle exec jekyll serve --livereload",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "isBackground": true,
         }
     ]
 }
