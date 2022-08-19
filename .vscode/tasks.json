@@ -7,30 +7,21 @@
         {
             "label": "Jekyll Build Install (install gems listed in Gemfile)",
             "type": "shell",
-            "command": "bundle install",
+            "command": "sudo bundle install",
             "group": {
                 "kind": "build",
-                "isDefault": true
+                //"isDefault": true
             },
         },
-        /*{
-            "label": "Jekyll Build (install gems listed in Gemfile",
-            "type": "shell",
-            "command": "bundle exec jekyll build",
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-        },*/
         {
             "label": "Jekyll Serve (with livereload)",
             "type": "shell",
-            "command": "bundle exec jekyll serve --livereload",
+            "command": "sudo bundle exec jekyll serve --livereload",
             "group": {
                 "kind": "build",
-                "isDefault": true
+                //"isDefault": true
             },
-            "isBackground": true,
+            //"isBackground": true,
         }
     ]
 }
