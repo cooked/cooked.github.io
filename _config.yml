@@ -10,6 +10,7 @@ plugins:
 - jekyll-toc
 - jekyll-archives
 - jekyll-leaflet
+- jekyll-target-blank # https://github.com/keithmifsud/jekyll-target-blank
 #- jekyll-maps
 
 exclude:
@@ -27,7 +28,7 @@ jekyll-archives:
     day: '/:year/:month/:day/'
     tag: '/tag/:name/'
     category: '/category/:name/'
- 
+
 #maps:
 #  google:
 #    api_key: AIzaSyDzn_BBHyTBPqXoSNlu39u5vrYo5P2qLqg
