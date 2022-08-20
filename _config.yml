@@ -11,6 +11,7 @@ plugins:
 - jekyll-archives
 - jekyll-leaflet
 - jekyll-target-blank # https://github.com/keithmifsud/jekyll-target-blank
+- jekyll-google-photos
 #- jekyll-maps
 
 exclude:

@@ -1,0 +1,16 @@
+
+<div class="pa-gallery-player-widget" style="width:100%; height:480px;"
+  id="MyAlbum1">
+</div>
+
+<script>
+    var album = document.getElementById('MyAlbum1');
+    let imageWidth = '0';
+    for(var i in googlePhotos.urls) {
+      var picture = document.createElement('img');
+      picture.src = googlePhotos.urls[i];
+      picture.alt = "label";
+      picture.alt = "label";
+      album.appendChild(picture);
+    }
+  </script>
