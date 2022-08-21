@@ -4,8 +4,20 @@ title: Telemark
 #date: 2022-08-05 20:30:00
 img_folder: norway
 image: /assets/img/norway/norway-01-featured.jpg
+gallery_url: https://photos.app.goo.gl/QZupEk8xfa7G9CdB7
 tags: travel norway
 ---
+
+
+## test google photos
+
+{% google_photos page.gallery_url none %}
+
+{% include img.html id=2 %}
+
+{% include img.html id=3 %}
+
+{% include img.html id=5 %}
 
 ## Telemark
 

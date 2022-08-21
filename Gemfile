@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'jekyll', '~> 3.9.0'
 gem 'webrick'
 group :jekyll_plugins do
+    gem 'jekyll-menus'
     gem 'github-pages'
     gem 'jekyll-leaflet'
     gem 'jekyll-contentblocks'
