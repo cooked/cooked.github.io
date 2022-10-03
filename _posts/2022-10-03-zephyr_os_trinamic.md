@@ -1,0 +1,84 @@
+---
+layout: single
+title: Trinamic TMCs drivers in Zephyr OS
+description: Add support for Trinamic TMCs stepper drivers to Zephyr OS
+
+tag: Zephyr OS, Trinamic, TMC
+
+header:
+    teaser: /assets/img/fallback-layout.jpg
+---
+
+This post is an introduction to a Zephyr OS driver that provides support for the TRINAMIC TMC5130 and TMC5160 stepper motor driver ICs
+
+## State of the art
+
+The driver supports both SPI and UART communication protocols. It provides a set of console commands to configure the driver and to run the stepper motor in velocity or position mode, using the internal ramp generator. 
+
+## SPI interface
+
+Interfacing with the TMC via SPI is pretty straightforward.  
+
+Pay attention to limit the maximum speed to 1MHz (TBC!!!)  
+{: .notice--warning}  
+
+``` bash
+&spi2 {
+    cs-gpios = <&gpiob 12 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+
+    tmc0: tmc5160@0 {
+        compatible = "trinamic,tmc5160";
+        status = "okay";
+        label = "TMC5160";
+        reg = <0x00>;
+        spi-max-frequency = <1000000>;
+        rotation-distance = <1>;    // [mm/turn]
+    };
+};
+```
+
+## UART interface
+
+``` bash
+&usart1 {
+    dmas = <&dma1 4 0x440>,
+            <&dma1 5 0x480>;
+    dma-names = "tx", "rx";
+    single-wire;
+    pinctrl-0 = <&usart1_tx_pa9>;
+
+    tmc0: tmc5160 {
+        compatible = "trinamic,tmc5160";
+        status = "okay";
+        label = "TMC5160";
+    };
+};
+```
+TODO: add config options
+
+## Shell commands
+
+NOTE polling  
+
+## Sample applications
+
+### DTS for SPI
+
+### DTS for UART (w/ DMA)
+
+
+## Development
+
+The project source code is available on [GitHub](https://github.com/cooked/zephyr-trinamic)  
+
+### Workspace
+### Project setup
+``` bash
+cd <repo root>
+west init -l manifest
+west update
+```
+
+### Build
+
+## Hardware

@@ -5,6 +5,10 @@ theme: minimal-mistakes-jekyll
 # fixes this: https://talk.jekyllrb.com/t/error-your-site-could-not-be-built-no-repo-name-found/5688
 repository: cooked/cooked.github.io
 
+title: /427
+description: A Quarter To Seven
+logo: "/assets/img/aqts_logo.png"
+
 # https://jekyllrb.com/docs/plugins/installation/
 plugins:
 - jekyll-remote-theme # github remote themes
@@ -30,6 +34,42 @@ jekyll-archives:
     day: '/:year/:month/:day/'
     tag: '/tag/:name/'
     category: '/category/:name/'
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      #author_profile: true
+      #read_time: true
+      comments: true
+      share: true
+      related: true
+      toc: true
+      toc_label: "Contents"
+      toc_icon: "none"
+      sidebar:
+        nav: "docs"
+      header:
+        teaser: /assets/img/fallback-layout.jpg
+
+author:
+  name: "A Quarter to Seven"
+  avatar: "/assets/images/bio-photo.jpg"
+  #bio: "I am an **amazing** person." # Note: Markdown is allowed
+  #location: "Somewhere"
+  links:
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/stefaniiino"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/mmistakes"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com"
 
 #maps:
 #  google:

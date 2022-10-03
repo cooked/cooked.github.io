@@ -14,6 +14,26 @@ $sans-serif-narrow  : "Nunito", -apple-system, BlinkMacSystemFont, "Roboto", "Se
 $global-font-family : $sans-serif-narrow;
 $header-font-family : $sans-serif-narrow;
 
+// solarized light syntax highlighting (base16)
+// https://mmistakes.github.io/minimal-mistakes/docs/stylesheets/#solarized-light
+$base00: #fafafa !default;
+$base01: #073642 !default;
+$base02: #586e75 !default;
+$base03: #657b83 !default;
+$base04: #839496 !default;
+$base05: #586e75 !default;
+$base06: #eee8d5 !default;
+$base07: #fdf6e3 !default;
+$base08: #dc322f !default;
+$base09: #cb4b16 !default;
+$base0a: #b58900 !default;
+$base0b: #859900 !default;
+$base0c: #2aa198 !default;
+$base0d: #268bd2 !default;
+$base0e: #6c71c4 !default;
+$base0f: #d33682 !default;
+
+
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
@@ -21,4 +41,24 @@ $header-font-family : $sans-serif-narrow;
 
 body {
     font-size: 18px;
+}
+
+.toc .nav__title {
+
+}
+
+.toc__menu {
+    font-size: 0.8em;
+}
+
+.toc__menu li {
+    font-size: 1.1em;
+}
+
+.toc__menu a {
+    border-bottom: none;
+}
+
+.sidebar__right {
+    width: 250px;
 }

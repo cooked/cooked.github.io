@@ -6,8 +6,8 @@ description: RPi x-compile
 date: 2022-08-05 20:30:00
 
 toc: true
-toc_label: "My Table of Contents"
-toc_icon: "cog"
+toc_label: "Contents"
+toc_icon: "none"
 
 tag: Raspberry Pi, Buildroot, OpenCV, Qt
 ---

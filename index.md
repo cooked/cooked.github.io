@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: "Welcome to Jekyll!"
+#title: "Welcome to Jekyll!"
 # link to articles
 #permalink: articles/
 #
