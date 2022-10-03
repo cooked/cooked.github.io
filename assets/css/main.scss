@@ -1,0 +1,24 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+# override 
+# see https://mmistakes.github.io/minimal-mistakes/docs/stylesheets/
+
+search: false
+---
+
+@charset "utf-8";
+
+$serif              : "Nunito", Georgia, Times, serif;
+$sans-serif-narrow  : "Nunito", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+
+$global-font-family : $sans-serif-narrow;
+$header-font-family : $sans-serif-narrow;
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+
+
+
+body {
+    font-size: 18px;
+}

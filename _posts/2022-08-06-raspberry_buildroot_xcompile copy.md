@@ -1,9 +1,15 @@
 ---
-layout: post
+layout: single
 title: Raspberry Pi cross-compile using Buildroot 
 description: RPi x-compile
 #image: assets/images/pic06.jpg
 date: 2022-08-05 20:30:00
+
+toc: true
+toc_label: "My Table of Contents"
+toc_icon: "cog"
+
+tag: Raspberry Pi, Buildroot, OpenCV, Qt
 ---
 
 This article provides a simple but robust workflow to develop embedded applications using cross-compilation.

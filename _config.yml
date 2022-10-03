@@ -1,5 +1,6 @@
 #theme: jekyll-theme-minimal
-remote_theme: pages-themes/minimal@v0.2.0
+theme: minimal-mistakes-jekyll
+#remote_theme: pages-themes/minimal@v0.2.0
 
 # fixes this: https://talk.jekyllrb.com/t/error-your-site-could-not-be-built-no-repo-name-found/5688
 repository: cooked/cooked.github.io

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: VSCode for Qt development
 description: Configure VSCode for Qt development 
 ---
