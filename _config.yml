@@ -1,4 +1,6 @@
 
+
+
 # https://github.com/mmistakes/minimal-mistakes#remote-theme-method
 #theme: minimal-mistakes-jekyll
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
@@ -12,13 +14,20 @@ logo: "/assets/img/aqts_logo.png"
 
 # https://jekyllrb.com/docs/plugins/installation/
 plugins:
-- jekyll-remote-theme # github remote themes
-- jekyll-toc
-- jekyll-archives
-- jekyll-leaflet
-- jekyll-target-blank # https://github.com/keithmifsud/jekyll-target-blank
-- jekyll-google-photos
+- jekyll-paginate
+- jekyll-sitemap
+- jekyll-gist
+- jekyll-feed
+- jemoji
+- jekyll-include-cache
+#- jekyll-remote-theme # github remote themes
+#- jekyll-toc
+#- jekyll-archives
+#- jekyll-leaflet
+#- jekyll-target-blank # https://github.com/keithmifsud/jekyll-target-blank
+#- jekyll-google-photos
 #- jekyll-maps
+
 
 exclude:
 - '*.sh'
@@ -72,6 +81,13 @@ author:
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com"
 
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+  
 #maps:
 #  google:
 #    api_key: AIzaSyDzn_BBHyTBPqXoSNlu39u5vrYo5P2qLqg
