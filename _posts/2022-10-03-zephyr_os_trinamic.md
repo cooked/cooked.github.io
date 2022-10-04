@@ -3,13 +3,17 @@ layout: single
 title: Trinamic TMCs drivers in Zephyr OS
 description: Add support for Trinamic TMCs stepper drivers to Zephyr OS
 
-tag: Zephyr OS, Trinamic, TMC
+tags: [Zephyr OS, Trinamic, TMC]
 
 header:
     teaser: /assets/img/fallback-layout.jpg
+
+excerpt_separator: "<!--more-->"
 ---
 
-This post is an introduction to a Zephyr OS driver that provides support for the TRINAMIC TMC5130 and TMC5160 stepper motor driver ICs
+This post is an introduction to a Zephyr OS driver that provides support for the TRINAMIC TMC5130 and TMC5160 stepper motor driver ICs.
+
+<!--more-->
 
 ## State of the art
 

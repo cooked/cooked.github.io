@@ -9,15 +9,27 @@ docs:
 - title: ENGINEERING
   children:
     - title: "Hardware"
-      url: /docs/quick-start-guide/
+      url: /docs/hardware/
     - title: "Software"
-      url: /docs/structure/
-    - title: "Firmware"
-      url: /docs/installation/
+      url: /docs/software/
+    - title: "Embedded"
+      url: /docs/embedded/
+
+- title: MATH & MODELS
+  #children:
+  #  - title: "Configuration"
+  #    url: /docs/configuration/
 
 - title: DIY
+  #children:
+  #  - title: "Configuration"
+  #    url: /docs/configuration/
+
+- title: OTHER
   children:
-    - title: "Configuration"
+    - title: "Productivity"
+      url: /docs/configuration/
+    - title: "Food & Health"
       url: /docs/configuration/
 
 - title: ARCHIVES

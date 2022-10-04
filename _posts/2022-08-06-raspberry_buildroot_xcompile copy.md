@@ -9,7 +9,7 @@ toc: true
 toc_label: "Contents"
 toc_icon: "none"
 
-tag: Raspberry Pi, Buildroot, OpenCV, Qt
+tag: [Raspberry Pi, Buildroot, OpenCV, Qt5]
 ---
 
 This article provides a simple but robust workflow to develop embedded applications using cross-compilation.
