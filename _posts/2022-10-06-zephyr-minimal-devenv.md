@@ -1,8 +1,14 @@
 ---
-layout: default
+layout: single
 title: A minimal development environment for Zephyr OS
-#description: Prot
+tags: [Zephyr OS]
+
+header:
+    teaser: /assets/img/fallback-layout.jpg
+
+#excerpt_separator: "<!--more-->"
 ---
+
 
 When I started developing for the Zephyr OS the first time I followed the project's [Getting Started Guide](https://docs.zephyrproject.org/latest/develop/getting_started/index.html). It is easy to follow and will get you started quickly.  
 But now I needed something different!  
