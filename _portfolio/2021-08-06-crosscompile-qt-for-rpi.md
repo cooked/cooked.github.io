@@ -5,7 +5,7 @@ title: Cross-compile Qt5 for the Raspberry Pi
 tags: [Qt5, Raspberry Pi, C/C++]
 
 header:
-    teaser: /assets/img/fallback-layout.jpg
+    teaser: /assets/img/raspberry_qt_logo.png
 ---
 
 Oftentimes when working on embedded projects it is not recommended (or not even possible) to develop directly on the target hardware, due to limitations of some sort. The Raspberry Pi for example does not offer a lot of computing power, which is why developing graphical interfaces on the Raspberry Pi is rather unpleasant. A much more elegant (and ultimately faster) way is to develop the program on a host PC and then copy it to the Raspberry Pi via a remote connection and then execute.

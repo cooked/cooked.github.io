@@ -2,6 +2,10 @@
 layout: single
 title: VSCode for Qt development
 description: Configure VSCode for Qt development 
+
+header:
+    teaser: https://decovar.dev/blog/2019/05/11/vscode-cmake-qt/images/qt-cmake-vscode.png
+
 ---
 
 This post is Part 1 in a series of two where we look at how to configre VSCode

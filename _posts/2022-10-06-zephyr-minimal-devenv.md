@@ -4,7 +4,7 @@ title: A minimal development environment for Zephyr OS
 tags: [Zephyr OS]
 
 header:
-    teaser: /assets/img/fallback-layout.jpg
+    teaser: https://docs.zephyrproject.org/3.1.0/_images/west-mr-model.png
 
 #excerpt_separator: "<!--more-->"
 ---

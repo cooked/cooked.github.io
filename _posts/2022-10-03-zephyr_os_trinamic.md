@@ -6,6 +6,7 @@ description: Add support for Trinamic TMCs stepper drivers to Zephyr OS
 tags: [Zephyr OS, Trinamic, TMC]
 
 header:
+    image: /assets/img/fallback-layout.jpg
     teaser: /assets/img/fallback-layout.jpg
 
 excerpt_separator: "<!--more-->"

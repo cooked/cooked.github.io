@@ -1,7 +1,10 @@
 ---
-layout: posts
-#title: "Welcome to Jekyll!"
-# link to articles
-#permalink: articles/
-#
+#layout: home
+title: Portfolio
+layout: collection
+#permalink: /portfolio/
+collection: portfolio
+#entries_layout: grid
+sidebar:
+    nav: "docs"
 ---
