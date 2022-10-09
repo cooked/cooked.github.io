@@ -8,4 +8,6 @@ recent_posts: ""
 ## see:
 # https://github.com/mmistakes/minimal-mistakes/issues/892
 
+# https://github.com/mmistakes/minimal-mistakes/issues/623
+
 ---
