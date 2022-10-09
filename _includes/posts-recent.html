@@ -1,0 +1,7 @@
+
+
+{% for post in site.posts limit:5 %}
+    {%- unless post.hidden -%}
+        {% include archive-single.html %}
+    {%- endunless -%}
+{% endfor %}

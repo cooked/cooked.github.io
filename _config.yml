@@ -105,7 +105,3 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
-  
-#maps:
-#  google:
-#    api_key: AIzaSyDzn_BBHyTBPqXoSNlu39u5vrYo5P2qLqg

@@ -1,8 +1,6 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
-# override 
+# Only the main Sass file needs front matter (the dashes are enough) override 
 # see https://mmistakes.github.io/minimal-mistakes/docs/stylesheets/
-
 search: false
 ---
 
@@ -34,11 +32,36 @@ $base0d: #268bd2 !default;
 $base0e: #6c71c4 !default;
 $base0f: #d33682 !default;
 
-
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
+.grid__item {
+    @include breakpoint($medium) {
+        //margin-left: 0; /* override margin*/
+        //margin-right: 0; /* override margin*/
+        width: span(4 of 12);
 
+        &:nth-child(2n + 1) {
+        clear: none;
+        }
+
+        &:nth-child(3n + 1) {
+        clear: both;
+        margin-left: 0;
+        }
+
+        &:nth-child(3n + 2) {
+        clear: none;
+        margin-left: gutter(1 of 12);
+        }
+
+        &:nth-child(3n + 3) {
+        clear: none;
+        margin-left: gutter(1 of 12);
+        }
+
+    }
+}
 
 body {
     font-size: 18px;
