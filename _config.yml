@@ -5,18 +5,18 @@ remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 # fixes this: https://talk.jekyllrb.com/t/error-your-site-could-not-be-built-no-repo-name-found/5688
 repository: cooked/cooked.github.io
 
-title: /427
+title: ""
 description: A Quarter To Seven
-logo: "/assets/img/aqts_logo.png"
+logo: "/assets/img/aqts_logo_block.png"
 
 # Build settings
 markdown: kramdown
-remote_theme: mmistakes/minimal-mistakes
+
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+#timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 include:
   - _pages
@@ -88,7 +88,7 @@ analytics:
   google:
     tracking_id: "UA-1061116-2"
     anonymize_ip: false # default
-    
+
 author:
   name: "A Quarter to Seven"
   avatar: "/assets/images/bio-photo.jpg"

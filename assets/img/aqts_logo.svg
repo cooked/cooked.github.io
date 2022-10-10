@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="130mm"
-   height="130mm"
-   viewBox="0 0 130 130"
+   width="390mm"
+   height="260mm"
+   viewBox="0 0 390 260"
    version="1.1"
    id="svg5"
    inkscape:version="1.2.1 (9c6d41e, 2022-07-14)"
@@ -29,15 +29,15 @@
      showgrid="false"
      showborder="false"
      borderlayer="true"
-     inkscape:zoom="0.914906"
-     inkscape:cx="165.59078"
-     inkscape:cy="585.85253"
-     inkscape:window-width="1844"
+     inkscape:zoom="0.64693624"
+     inkscape:cx="994.68844"
+     inkscape:cy="695.58632"
+     inkscape:window-width="2378"
      inkscape:window-height="1619"
-     inkscape:window-x="307"
-     inkscape:window-y="176"
+     inkscape:window-x="778"
+     inkscape:window-y="162"
      inkscape:window-maximized="0"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="layer2" />
   <defs
      id="defs2" />
   <g
@@ -119,5 +119,126 @@
        x="90"
        y="90"
        ry="4" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2">
+    <g
+       id="g1060"
+       inkscape:export-filename="aqts_logo_block.png"
+       inkscape:export-xdpi="12.192001"
+       inkscape:export-ydpi="12.192001">
+      <rect
+         style="fill:#222222;fill-opacity:1;stroke-width:3.04917;stroke-linejoin:round;paint-order:fill markers stroke"
+         id="rect986"
+         width="390"
+         height="130"
+         x="0"
+         y="130"
+         ry="20" />
+      <g
+         id="g368"
+         transform="matrix(0.72727273,0,0,0.72727273,17.727273,52.603004)">
+        <rect
+           style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.6001;stroke-linejoin:round;stroke-opacity:1;paint-order:fill markers stroke"
+           id="rect111-36"
+           width="30.25"
+           height="30.25"
+           x="10"
+           y="140.79587"
+           ry="4.0333333"
+           inkscape:export-filename="aqts_48x48.png"
+           inkscape:export-xdpi="12.192001"
+           inkscape:export-ydpi="12.192001" />
+        <rect
+           style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:2.6001;stroke-linejoin:round;stroke-opacity:1;paint-order:fill markers stroke"
+           id="rect111-3-75"
+           width="30.25"
+           height="30.25"
+           x="10"
+           y="180.67087"
+           ry="4.0333333" />
+        <rect
+           style="fill:#c7ff00;fill-opacity:1;stroke:none;stroke-width:2.6001;stroke-linejoin:round;stroke-opacity:1;paint-order:fill markers stroke"
+           id="rect111-3-6-3"
+           width="30.25"
+           height="30.25"
+           x="10"
+           y="220.54587"
+           ry="4.0333333" />
+        <rect
+           style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.6001;stroke-linejoin:round;stroke-opacity:1;paint-order:fill markers stroke"
+           id="rect111-3-7-562"
+           width="30.25"
+           height="30.25"
+           x="49.875"
+           y="140.79587"
+           ry="4.0333333" />
+        <rect
+           style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.6001;stroke-linejoin:round;stroke-opacity:1;paint-order:fill markers stroke"
+           id="rect111-3-7-5-9"
+           width="30.25"
+           height="30.25"
+           x="89.75"
+           y="140.79587"
+           ry="4.0333333" />
+        <rect
+           style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.6001;stroke-linejoin:round;stroke-opacity:1;paint-order:fill markers stroke"
+           id="rect111-3-7-3-1"
+           width="30.25"
+           height="30.25"
+           x="49.875"
+           y="180.67087"
+           ry="4.0333333" />
+        <rect
+           style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.6001;stroke-linejoin:round;stroke-opacity:1;paint-order:fill markers stroke"
+           id="rect111-3-7-56-2"
+           width="30.25"
+           height="30.25"
+           x="89.75"
+           y="180.67087"
+           ry="4.0333333" />
+        <rect
+           style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.6001;stroke-linejoin:round;stroke-opacity:1;paint-order:fill markers stroke"
+           id="rect111-3-7-2-7"
+           width="30.25"
+           height="30.25"
+           x="49.875"
+           y="220.54587"
+           ry="4.0333333" />
+        <rect
+           style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.6001;stroke-linejoin:round;stroke-opacity:1;paint-order:fill markers stroke"
+           id="rect111-3-7-9-0"
+           width="30.25"
+           height="30.25"
+           x="89.75"
+           y="220.54587"
+           ry="4.0333333" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:100px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="189.16153"
+         y="174.05481"
+         id="text1043"
+         transform="rotate(16.554754)"><tspan
+           sodipodi:role="line"
+           id="tspan1041"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:100px;font-family:'Varela Round';-inkscape-font-specification:'Varela Round';fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+           x="189.16153"
+           y="174.05481">/</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:100px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="182.0907"
+         y="230.14999"
+         id="text1043-3"><tspan
+           sodipodi:role="line"
+           id="tspan1041-6"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:100px;font-family:'Varela Round';-inkscape-font-specification:'Varela Round';fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+           x="182.0907"
+           y="230.14999">427</tspan></text>
+    </g>
   </g>
 </svg>
