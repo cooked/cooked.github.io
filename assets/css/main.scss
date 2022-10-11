@@ -32,6 +32,9 @@ $base0d: #268bd2 !default;
 $base0e: #6c71c4 !default;
 $base0f: #d33682 !default;
 
+// Jekyll supported formatting languages
+// https://www.fabriziomusacchio.com/blog/2021-08-11-Syntax_Highlighting_in_Jekyll/
+
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
@@ -65,6 +68,26 @@ $base0f: #d33682 !default;
 
 body {
     font-size: 18px;
+}
+
+
+// override columns' size
+@media (min-width: 80em) {
+    
+    .sidebar {
+        width: calc(180px - 2em);
+    }
+    .page {
+        width: calc(100% - 200px);
+        padding-right: 300px;
+    }
+    .page__related {
+        width: calc(100% - 200px);
+    }
+
+    .sidebar.sticky {
+        top: 0.5em;
+    }
 }
 
 .toc {
@@ -105,7 +128,23 @@ body .site-title {
     color: #3d4144;
 }
 
+// page
+.page__title {
+    margin-bottom: 1em;
+}
 .page__hero-image {
     object-fit: cover;
     height: 200px;
+}
+
+.pagination--pager {
+    width: 48%;
+    border-radius: 10px;
+}
+/*.pagination--pager:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}*/
+.pagination--pager:last-child {
+    float: right;
 }

@@ -19,7 +19,7 @@ paginate_path: /page:num/
 #timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 include:
-  - _pages
+- _pages
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list to override the default setting.
@@ -77,6 +77,7 @@ defaults:
       toc: true
       toc_label: "Contents"
       toc_icon: "none"
+      toc_sticky: true
 
       sidebar:
         nav: "docs"
@@ -88,6 +89,8 @@ analytics:
   google:
     tracking_id: "UA-1061116-2"
     anonymize_ip: false # default
+
+#google_site_verification: "yourVerificationCode"
 
 author:
   name: "A Quarter to Seven"
