@@ -4,7 +4,7 @@ title: Deploy to GitHub Pages using Actions
 tags: [GitHub Pages, GitHub Actions, Jekyll]
 
 header:
-    teaser: /assets/img/ghpges-actions.png
+    teaser: /assets/img/ghpages-actions.png
 
 ---
 
