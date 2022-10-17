@@ -1,6 +1,6 @@
 ---
 layout: single
-title: A minimal development environment for Zephyr OS
+title: Zephyr RTOS minimal development environment 
 tags: [Zephyr OS]
 
 header:
