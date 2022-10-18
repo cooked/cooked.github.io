@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Zephyr RTOS minimal development environment 
-tags: [Zephyr OS]
+tags: [Zephyr RTOS]
 
 header:
     teaser: https://docs.zephyrproject.org/3.1.0/_images/west-mr-model.png
