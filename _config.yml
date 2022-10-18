@@ -87,7 +87,8 @@ defaults:
 analytics:
   provider: "google-gtag"
   google:
-    tracking_id: "UA-1061116-2"
+    #tracking_id: 'UA-1061116-2'
+    tracking-id: 'G-VG004BYMTP'
     anonymize_ip: false # default
 
 #google_site_verification: "yourVerificationCode"
