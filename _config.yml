@@ -85,10 +85,9 @@ defaults:
         teaser: /assets/img/fallback-layout.jpg
 
 analytics:
-  provider: "google-gtag"
+  provider: 'google-gtag'
   google:
-    #tracking_id: 'UA-1061116-2'
-    tracking-id: 'G-VG004BYMTP'
+    tracking_id: 'G-VG004BYMTP' # 'UA-1061116-2'
     anonymize_ip: false # default
 
 #google_site_verification: "yourVerificationCode"
