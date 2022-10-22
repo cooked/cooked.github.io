@@ -1,7 +1,7 @@
 ---
 layout: single
 title: BRoute, a better routing for Wikiloc
-tags: [Wikiloc, OpenStreetMap]
+tags: [Wikiloc, OpenStreetMap, Leaflet.js]
 
 header:
     teaser: /assets/img/wikiloc_router_1.png
