@@ -3,7 +3,7 @@ layout: single
 title: Trinamic TMCs drivers in Zephyr RTOS
 description: Add support for Trinamic TMCs stepper drivers to Zephyr OS
 
-tags: [Zephyr OS, Trinamic, TMC]
+tags: [Zephyr RTOS, Trinamic, TMC]
 
 header:
     #image: /assets/img/fallback-layout.jpg
@@ -12,13 +12,13 @@ header:
 excerpt_separator: "<!--more-->"
 ---
 
-Introduction to the Zephyr RTOS driver for the TMC51xx series of TRINAMIC's motor ICs.
+Introduction to the Zephyr RTOS driver for the TMC51xx series of motor ICs from [TRINAMIC](https://www.trinamic.com/).
 
 <!--more-->
 
 ## State of the art
 
-The driver supports both **SPI and UART** communication protocols. It provides a set of console commands to configure the driver and to run the stepper motor in **velocity or position mode, using the internal ramp generator**.Source code is available on [GitHub](https://github.com/cooked/zephyr-trinamic).
+The driver supports both **SPI and UART** communication protocols. It provides a set of console commands to configure the driver and to run the stepper motor in **velocity or position mode, using the internal ramp generator**. Source code can be downloaded from [GitHub](https://github.com/cooked/zephyr-trinamic).
 
 ### TODOs
 
@@ -32,8 +32,8 @@ The driver supports both **SPI and UART** communication protocols. It provides a
 
 Interfacing with the TMC via SPI is pretty straightforward.  
 
-Pay attention to limit the maximum speed to 1MHz (TBC!!!)  
-{: .notice--warning}  
+**SPI speed** is set to 1MHz to be on the safe side, but can be increased up to 4MHz, according to the datasheet.
+{: .notice--info}  
 
 ``` bash
 &spi2 {
@@ -45,12 +45,15 @@ Pay attention to limit the maximum speed to 1MHz (TBC!!!)
         label = "TMC5160";
         reg = <0x00>;
         spi-max-frequency = <1000000>;
-        rotation-distance = <1>;    // [mm/turn]
+        //rotation-distance = <1>;    // [mm/turn] not supported yet
     };
 };
 ```
 
 ## UART interface
+
+Interface via UART is a bit more tricky but serves better the case of several TMC drivers connected on the same bus. Here 
+the UART on the "master" (a Nucleo F103RB board) is configured as "single-wire" and uses DMA.  
 
 ``` bash
 &usart1 {
@@ -68,44 +71,60 @@ Pay attention to limit the maximum speed to 1MHz (TBC!!!)
 };
 ```
 
-
-
 On the ST Nucleo F103RB board the UART2 is used for the consol/debug. Select a different UARTx for the TMC driver.  
 {: .notice--warning}  
 
 ## Shell commands
 
-NOTE polling  
+The driver provides a simple set of commands (below is a subset) that can be used to run a motor or just peek into drivers registers.
+
+``` bash
+
+# Run motor (address) 0 at 10 rpm
+> tmc 0 run 10
+
+# Stop the motor
+> tmc 0 run 0
+
+# Rotate motor fwd by 2 turns and back by 1 (incremental positioning)
+> tmc 0 turn 2
+> tmc 0 turn -1
+
+# Rotate motor to 0 turns (absolute positioning)
+> tmc 0 move 0
+
+# Read  current position from the register
+> tmc 0 get xactual
+```
 
 ## Sample applications
 
-### DTS for SPI
-
-### DTS for UART (w/ DMA)
-
+Sample applications for connecting a ST Nucleo F103RB board to a TMC5160 via [SPI and UART are provided](https://github.com/cooked/zephyr-trinamic/tree/master/samples) as a starting point.  
 
 ## Development
 
-The project source code is available on [GitHub](https://github.com/cooked/zephyr-trinamic)  
+### Workspace  
 
-### Workspace
-### Project setup
+Load the VSCode [workspace provided](https://github.com/cooked/zephyr-trinamic) for a quick start with development.  
+
+### Project setup  
+
 ``` bash
 cd <repo root>
 west init -l manifest
 west update
 ```
 
-TODO: describe the use of the manifest to keep the size small
+The provided **west manifest** is kept small on purpose. It works out-of-the-box for STM32 silicons and shall be modified if you're targeting a different one. See [Zephyr manifest](https://github.com/zephyrproject-rtos/zephyr/blob/main/west.yml) for the complete list of modules
+{: .notice--info}
 
 ### Build
 
-## Hardware
-TODO: describe the tested (supported) hardware and provide pictures of the wiring
+The project comes with a short list of [**VSCode build tasks**](https://github.com/cooked/zephyr-trinamic/blob/master/.vscode/tasks.json) for the sample applications, that can be accesses via **<<CTRL+SHIFT+B>>**.  
 
-TODO: specify the order of connection (VM first, then VCC_IO) and the cycling of vcc io to reset
-- Watterot silentstick (specify that the UART pin are not accessible)
-- TMC BOB board
-- TMC eval board
-- TMC5130 Feedo
+## Hardware  
 
+The TMC5160 driver has been tested with the [Nucleo-64 STM32F103RB](https://www.st.com/en/evaluation-tools/nucleo-f103rb.html) board, [Watterott SilentStepStick TMC5160](https://shop.watterott.com/SilentStepStick-TMC5160-Stepper-motor-driver) (SPI only, UART pins not available), TRINAMIC [TMC5160-BOB](https://www.trinamic.com/support/eval-kits/details/tmc5160-bob/) breakout board, TRINAMIC [TMC5160-EVAL](https://www.trinamic.com/support/eval-kits/details/tmc5160-eval/) and own custom boards based on TMC5130 chips.
+
+**COMING SOON** - Pictures of the testing setup and wiring, and test procedures (incl. power up order: VM first, then VCC_IO, and cycling of vcc io to reset)
+{: .notice--info}
