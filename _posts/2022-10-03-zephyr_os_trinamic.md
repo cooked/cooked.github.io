@@ -3,7 +3,7 @@ layout: single
 title: Trinamic TMCs drivers in Zephyr RTOS
 description: Add support for Trinamic TMCs stepper drivers to Zephyr OS
 
-tags: [Zephyr RTOS, Trinamic, TMC]
+tags: [Zephyr RTOS, Trinamic, TMC5160, TMC5130]
 
 header:
     #image: /assets/img/fallback-layout.jpg
