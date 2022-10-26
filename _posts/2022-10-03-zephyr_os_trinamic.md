@@ -18,7 +18,7 @@ Introduction to the Zephyr RTOS driver for the TMC51xx series of TRINAMIC's moto
 
 ## State of the art
 
-The driver supports both **SPI and UART** communication protocols. It provides a set of console commands to configure the driver and to run the stepper motor in **velocity or position mode, using the internal ramp generator**.  
+The driver supports both **SPI and UART** communication protocols. It provides a set of console commands to configure the driver and to run the stepper motor in **velocity or position mode, using the internal ramp generator**.Source code is available on [GitHub](https://github.com/cooked/zephyr-trinamic).
 
 ### TODOs
 
