@@ -8,6 +8,14 @@ header:
 
 ---
 
+TODO:
+https://www.google.com/search?q=pmsm+differential+equations&oq=pmsm+differential+equations&aqs=chrome..69i57.6265j0j7&sourceid=chrome&ie=UTF-8
+https://www.mathworks.com/help/sps/ref/inductionmachinesquirrelcage.html
+file:///home/stefano/Downloads/IPSJ-APRIS2020015.pdf
+
+motorpm software: https://motoranalysis.com/wp-content/uploads/machines-07-00075-v3.pdf
+
+
 ### Overview
 
 This is the first of a series of posts about electrical machines modeling. The main goal of these notes is to provide the theoretical foundation for the synthesis of control algorithms.  
@@ -18,9 +26,9 @@ Voltage equations (for $$s=stator, r=rotor$$)
 
   $$
   \begin{align}  
-  v_{ds} &= R_s i_{ds} + \frac{d\psi_{ds}}{dt} - \omega_e \psi_{qs} \\ 
-  v_{qs} &= R_s i_{qs} + \frac{d\psi_{qs}}{dt} + \omega_e \psi_{ds} \\
-  v_{dr} &= R_s i_{dr} + \frac{d\psi_{dr}}{dt} - \omega_e \psi_{qr} \\ 
+  v_{ds} &= R_s i_{ds} + \frac{d\psi_{ds}}{dt} - \omega_e \psi_{qs} \\  
+  v_{qs} &= R_s i_{qs} + \frac{d\psi_{qs}}{dt} + \omega_e \psi_{ds} \\  
+  v_{dr} &= R_s i_{dr} + \frac{d\psi_{dr}}{dt} - \omega_e \psi_{qr} \\  
   v_{qr} &= R_s i_{qr} + \frac{d\psi_{qr}}{dt} + \omega_e \psi_{dr}
   \end{align}
   $$
