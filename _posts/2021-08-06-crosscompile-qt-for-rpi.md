@@ -1,9 +1,7 @@
 ---
 layout: single
 title: Cross-compile Qt5 for the Raspberry Pi
-
 tags: [Qt5, Raspberry Pi, C/C++]
-
 header:
     teaser: /assets/img/raspberry_qt_logo.png
 ---
