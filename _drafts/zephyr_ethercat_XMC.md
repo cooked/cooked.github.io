@@ -1,9 +1,10 @@
 ---
-layout: default
-title: Test / Prova
-description: Prot
-#image: assets/images/pic06.jpg
-date: 2021-03-17 20:31:45
+layout: single
+title: EtherCAT master with SOEM and Zephyr RTOS
+tags: [Zephyr RTOS, C/C++, EtherCAT, SOEM]
+category: embedded
+#header:
+#    teaser: /assets/img/kimotor.png
 ---
 
 TODO:

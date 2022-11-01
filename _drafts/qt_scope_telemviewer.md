@@ -1,8 +1,10 @@
 ---
-layout: default
-title: Test / Prova
-description: Prot
-#image: assets/images/pic06.jpg
+layout: single
+title: Oscilloscope in Qt5
+tags: [Qt5, C/C++]
+category: software
+#header:
+#    teaser: /assets/img/kimotor.png
 ---
 
 TODO: watch the TI videos about this

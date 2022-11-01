@@ -14,9 +14,19 @@
             },
         },
         {
-            "label": "Jekyll Serve (with livereload)",
+            "label": "Jekyll Serve ",
             "type": "shell",
             "command": "sudo bundle exec jekyll serve --livereload",
+            "group": {
+                "kind": "build",
+                //"isDefault": true
+            },
+            //"isBackground": true,
+        },
+        {
+            "label": "Jekyll Serve (incl. drafts)",
+            "type": "shell",
+            "command": "sudo bundle exec jekyll serve --drafts --livereload",
             "group": {
                 "kind": "build",
                 //"isDefault": true

@@ -2,7 +2,7 @@
 layout: single
 title: Induction Motor (IM) model for control
 tags: [Models, Motor, Control]
-
+category: models
 header:
     teaser: https://www.engineeringtoolbox.com/docs/documents/832/electric_motor.png
 

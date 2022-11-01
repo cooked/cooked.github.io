@@ -1,7 +1,10 @@
 ---
-layout: default
-#title: Test / Prova
-description: Prot
+layout: single
+title: Thoughts about axial-flux motors
+tags: [machines]
+category: models
+#header:
+#    teaser: /assets/img/kimotor.png
 ---
 
 ## compare radial vs axial  

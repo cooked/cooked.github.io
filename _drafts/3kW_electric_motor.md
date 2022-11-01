@@ -1,7 +1,10 @@
 ---
-layout: default
-#title: Test / Prova
-description: Prot
+layout: single
+title: 3kW electric motor tear down
+tags: [machines]
+category: hardware
+#header:
+#    teaser: /assets/img/kimotor.png
 ---
 
 TODO: watch the TI videos about this

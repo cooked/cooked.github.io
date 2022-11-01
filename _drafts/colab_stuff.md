@@ -1,7 +1,10 @@
 ---
-layout: default
-title: Test / Prova
-description: Prot
+layout: single
+title: A random collection of Colab stuff
+tags: [machines]
+category: hardware
+#header:
+#    teaser: /assets/img/kimotor.png
 ---
 
-TODO: watch the TI videos about this
+
