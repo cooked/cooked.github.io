@@ -9,11 +9,13 @@ docs:
 - title: ENGINEERING
   children:
     - title: "Hardware"
-      url: /docs/hardware/
+      url: /category/hardware/
     - title: "Software"
-      url: /docs/software/
-    - title: "Embedded"
-      url: /docs/embedded/
+      url: /category/software/
+    #- title: "Embedded"
+    #  url: /category/embedded/
+    #- title: "Mechanics"
+    #  url: /category/embedded/
 
 - title: MATH & MODELS
   #children:
@@ -25,12 +27,12 @@ docs:
   #  - title: "Configuration"
   #    url: /docs/configuration/
 
-- title: OTHER
-  children:
-    - title: "Productivity"
-      url: /docs/configuration/
-    - title: "Food & Health"
-      url: /docs/configuration/
+#- title: OTHER
+#  children:
+#    - title: "Productivity"
+#      url: /docs/configuration/
+#    - title: "Food & Health"
+#      url: /docs/configuration/
 
 - title: ARCHIVES
   children:

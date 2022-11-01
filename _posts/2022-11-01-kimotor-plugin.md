@@ -2,15 +2,14 @@
 layout: single
 title: KiMotor - Parametric PCB motors in KiCad
 tags: [KiCad, Python, PCB]
+category: software
 header:
     teaser: /assets/img/kimotor.png
 # papers to read: see other post on axial-flux motor design
 # https://pcbstator.com/
 ---
 
-## Introduction
-
-This post is a collection of notes taken when coding KiMotor, a proof-of-concept KiCad plugin to generate parametric PCB stators for axial-flux electric motors.
+Notes on a proof-of-concept KiCad plugin to generate parametric PCB stators for axial-flux electric motors.
 
 ## Current status
 

@@ -44,9 +44,6 @@ plugins:
 - jekyll-feed
 - jemoji
 - jekyll-include-cache
-#- jekyll-remote-theme # github remote themes
-#- jekyll-toc
-#- jekyll-archives
 #- jekyll-leaflet
 #- jekyll-target-blank # https://github.com/keithmifsud/jekyll-target-blank
 #- jekyll-google-photos
@@ -63,7 +60,6 @@ jekyll-archives:
     category: '/category/:name/'
 
 defaults:
-  # _posts
   - scope:
       path: ""
       type: posts
