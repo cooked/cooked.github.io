@@ -17,14 +17,14 @@ Add great looking maps to your static Jekyll webpage.
 Like the [previous article on hiking maps]({% post_url 2022-10-22-brouter-wikiloc %}), this blog post is also about a bit of code used at [van42.com](https://www.van42.com/).
 It shows a map on the home page where it is possible to pinpoint all of our travel articles.  
 
-A possible approaches I consider first was the [jekyll-leaflet](https://github.com/DavidJVitale/jekyll-leaflet) by David J. Vitale. After a very quick start I fond out that the plugin was falling short for what I was looking for and the last active development is dated back in 2020.  
+A possible approaches I consider first was the [jekyll-leaflet](https://github.com/DavidJVitale/jekyll-leaflet) by David J. Vitale. After a very quick start I found out that the plugin was falling short for what I was looking for and the last active development is dated back in 2020.  
 What I was after was, on top of adding map markers automatically from the posts loop, select a **custom icon** for the marker, **add a link to the marker** to open the post when clicked and have **gesture support** like in [Google Maps](https://developers.google.com/maps/documentation/javascript/examples/interaction-cooperative).
 
 ### Implement Leaflet.js
 
 So, instead of relying on the plugin I first added the [Leaflet.js](https://leafletjs.com/) library to the Jekyll home layout (see code snippets below).
 
-IMPORTANT - Place both CSS anf JS parts of the library in the <<head>> section of the HTML file, with the CSS before the JS.
+**IMPORTANT** - Place both CSS anf JS parts of the library in the <<head>> section of the HTML file, with the CSS before the JS.
 {: .notice--warning}
 
 ```html
@@ -55,7 +55,7 @@ Then for the home content I've added the following code directly in the index.md
 }
 ```
 
-IMPORTANT - The map needs a fixed **height** for the tiles to be sized and displayed correctly. The width, on the other hand, can be variable. 
+**IMPORTANT** - The map needs a fixed **height** for the tiles to be sized and displayed correctly. The width, on the other hand, can be variable. 
 {: .notice--warning}
 
 ### Custom markers loop
