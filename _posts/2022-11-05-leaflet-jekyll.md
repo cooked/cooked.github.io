@@ -55,7 +55,7 @@ Then for the home content I've added the following code directly in the index.md
 }
 ```
 
-**IMPORTANT** - The map needs a fixed **height** for the tiles to be sized and displayed correctly. The width, on the other hand, can be variable. 
+**IMPORTANT** - The map needs a fixed **height** for the tiles to be sized and displayed correctly. The width, on the other hand, can be variable.
 {: .notice--warning}
 
 ### Custom markers loop
