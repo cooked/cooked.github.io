@@ -24,9 +24,9 @@ A smarter alternative is instead to setup a development machine, where all the p
 
 This workflow is referred to as **cross-compilation** and to work properly it relies on two key aspects:
 
-- cross-compilation **toolchain**, the set of tools (compiler, linker, etc.) available on the development machine (i.e. host) and needed to build the source code into binary files for the embedded device (target). Since the CPU architecture of the host and the target might not be the same, the standard toolchain of the host, which is designed to produce binaries for its own architecture, doesn't work for cross-compilation. Instead, for example, a development x86 machine used to develop for Raspberry will use a toolchain that runs on x86 but compiles for ARM.
+- the cross-compilation **toolchain**, the set of tools (compiler, linker, etc.) available on the development machine (i.e. host) and needed to build the source code into binary files for the embedded device (target). Since the CPU architecture of the host and the target might not be the same, the standard toolchain of the host, which is designed to produce binaries for its own architecture, doesn't work for cross-compilation. Instead, for example, a development x86 machine used to develop for Raspberry will use a toolchain that runs on x86 but compiles for ARM.
 
-- **target filesystem**, the set of libraries and other relevant resources representing the target environment of the embedded device in which the cross-compiled application will run. For example,
+- the **target filesystem**, the set of libraries and other relevant resources representing the target environment of the embedded device in which the cross-compiled application will run. For example,
 
 As described above, and when compared to local development, cross-compiling might seems more convoluted to set up and it might end up being more difficult to maintain.
 
@@ -34,28 +34,70 @@ As described above, and when compared to local development, cross-compiling migh
 
 The overarching goal is to have a (mostly) automated and consistent way of generating
 
-![My helpful screenshot](/assets/)
-
 ## State of the art
 
-Current
+Currently there are few other notable ways to achieve the same result, few of which I've used in the past.
+
+TODO: list methods:
+
+- qengineering
+- abishek
+
+## TL;DR
+
+Refer to the buildroot configuration in
+
+Run the following
+
+```bash
+# build the raspberry img
+make
+
+```
 
 ## Buildroot
 
-### Configuration
-
-![My helpful screenshot](/assets/images/img1.jpeg)
-
-### Generate SDK
+### Install
 
 ``` bash
-Target packages -> Network -> 
+cd ~
+git clone https://github.com/buildroot/buildroot.git
+cd buildroot
+```
+
+### Configure
+
+Qt creator needs:
+
+- sftp (use openSSH instead of dropbox)
+- rsync
+
+### Setup SDK and dev env
+
+``` bash
+cd ~/buildroot
+make sdk
+```
+
+- copy the sdk into home
+- config the sdk (run relocate.sh)
+
+```bash
+cd ~
+cp buildroot/output/images/arm-buildroot-linux-gnueabihf_sdk-buildroot.tar.gz .
+tar -xvf arm-buildroot-linux-gnueabihf_sdk-buildroot.tar.gz
+mv arm-buildroot-linux-gnueabihf_sdk-buildroot rpi-buildroot-sdk
+```
+
+then fix the simlinks running the relocator script
+
+```bash
+cd rpi-buildroot-sdk
+./relocate-sdk.sh
 ```
 
 ## Host computer
 
-adfgervbejhrbjtvhberjt
+### Configure QtCreator
 
-## Heading 2c
-
-rejktbvyejr  ecrhtnwer  rnckuer ucwntke
+### Qt project deploy
