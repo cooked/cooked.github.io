@@ -39,10 +39,8 @@ Interfacing with the TMC via SPI is pretty straightforward.
     tmc0: tmc5160@0 {
         compatible = "trinamic,tmc5160";
         status = "okay";
-        label = "TMC5160";
         reg = <0x00>;
         spi-max-frequency = <1000000>;
-        //rotation-distance = <1>;    // [mm/turn] not supported yet
     };
 };
 ```
@@ -63,7 +61,6 @@ the UART on the "master" (a Nucleo F103RB board) is configured as "single-wire" 
     tmc0: tmc5160 {
         compatible = "trinamic,tmc5160";
         status = "okay";
-        label = "TMC5160";
     };
 };
 ```
@@ -121,7 +118,32 @@ The project comes with a short list of [**VSCode build tasks**](https://github.c
 
 ## Hardware  
 
-The TMC5160 driver has been tested with the [Nucleo-64 STM32F103RB](https://www.st.com/en/evaluation-tools/nucleo-f103rb.html) board, [Watterott SilentStepStick TMC5160](https://shop.watterott.com/SilentStepStick-TMC5160-Stepper-motor-driver) (SPI only, UART pins not available), TRINAMIC [TMC5160-BOB](https://www.trinamic.com/support/eval-kits/details/tmc5160-bob/) breakout board, TRINAMIC [TMC5160-EVAL](https://www.trinamic.com/support/eval-kits/details/tmc5160-eval/) and own custom boards based on TMC5130 chips.
+The TMC5160 driver has been tested with the following hardware:
+- [Nucleo-64 STM32F103RB](https://www.st.com/en/evaluation-tools/nucleo-f103rb.html) board
+- Watterott [SilentStepStick TMC5160](https://shop.watterott.com/SilentStepStick-TMC5160-Stepper-motor-driver) (SPI only, UART pins not available)
+- TRINAMIC [TMC5160-BOB](https://www.trinamic.com/support/eval-kits/details/tmc5160-bob/) breakout board
+- TRINAMIC [TMC5160-EVAL](https://www.trinamic.com/support/eval-kits/details/tmc5160-eval/) 
+- own custom boards based on TMC5130 chip
 
-**COMING SOON** - Pictures of the testing setup and wiring, and test procedures (incl. power up order: VM first, then VCC_IO, and cycling of vcc io to reset)
+**POWER-UP SEQUENCE** 1) apply motor voltage VM, 2) apply digital IO voltage VCC_IO. The driver IC is **reset cycling VCC_IO**
 {: .notice--info}
+
+### NUCLEO/TMC5160-SS (SPI)
+
+| **NUCLEO-F103RB** | **TMC5160 StepStick** | Description |
+|---|---|---|
+|  | GND | Ground |
+|  | VM | Motor Supply Voltage (10-35V) |
+| CN6 pin 4 (3V3) | VIO | Logic Supply Voltage (3.3-5V) |
+| GND | EN | Enable Motor Outputs (GND=on, VIO=off) |
+| CN10, PB15 (SPI2_MISO) | SDO/CFG0 | MISO - Serial Data Output |
+| CN10, PB14 (SPI2_MOSI) | SDI/CFG1 | MOSI - Serial Data Input |
+| CN10, PB13 (SPI2_CLK) | SCK/CFG2 | SCLK - Serial Clock Input |
+| CN10, PB12 (SPI2_CLK) | CS/CFG3 | SS - Chip Select Input (no internal pu resistor) |
+|  | M1A/B, M2A/B | Motor Coils |
+
+![nucleo-ss-wiring](/assets/img/nucleo-tmc5160.png){: .align-center}
+
+### NUCLEO/TMC5160-BOB (UART)
+
+TODO:
