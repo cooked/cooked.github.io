@@ -130,6 +130,12 @@ The TMC5160 driver has been tested with the following hardware:
 
 ### NUCLEO/TMC5160-StepStick (SPI)
 
+**HW MOD** Watterott StepStick have the STEP/DIR interface enabled by default. To enable the TMC5160 internal ramp generator apply this **TODO** mod 
+{: .notice--info}
+
+**UART** Watterott StepStick does not support UART interface 
+{: .notice--error}
+
 | **NUCLEO-F103RB** | **TMC5160 board** | Description |
 |---|---|---|
 |  | GND | Ground |
@@ -146,10 +152,13 @@ The TMC5160 driver has been tested with the following hardware:
 
 ### NUCLEO/TMC5160-BOB (SPI)
 
+**UART** Trinamic BOB board does not support UART interface **(TODO see schematic)**
+{: .notice--error}
+
 The table of connections is the same as for the StepStick above, while the wiring diagram is provided below.
 
 ![nucleo-bob-wiring-spi](/assets/img/nucleo-tmc5160bob-spi.png){: .align-center}
 
-### NUCLEO/TMC5160-BOB (UART)
+### NUCLEO/TMC5160-EVAL (UART)
 
 TODO:
