@@ -128,21 +128,27 @@ The TMC5160 driver has been tested with the following hardware:
 **POWER-UP SEQUENCE** 1) apply motor voltage VM, 2) apply digital IO voltage VCC_IO. The driver IC is **reset cycling VCC_IO**
 {: .notice--info}
 
-### NUCLEO/TMC5160-SS (SPI)
+### NUCLEO/TMC5160-StepStick (SPI)
 
-| **NUCLEO-F103RB** | **TMC5160 StepStick** | Description |
+| **NUCLEO-F103RB** | **TMC5160 board** | Description |
 |---|---|---|
 |  | GND | Ground |
 |  | VM | Motor Supply Voltage (10-35V) |
 | CN6 pin 4 (3V3) | VIO | Logic Supply Voltage (3.3-5V) |
 | GND | EN | Enable Motor Outputs (GND=on, VIO=off) |
-| CN10, PB15 (SPI2_MISO) | SDO/CFG0 | MISO - Serial Data Output |
-| CN10, PB14 (SPI2_MOSI) | SDI/CFG1 | MOSI - Serial Data Input |
-| CN10, PB13 (SPI2_CLK) | SCK/CFG2 | SCLK - Serial Clock Input |
-| CN10, PB12 (SPI2_CLK) | CS/CFG3 | SS - Chip Select Input (no internal pu resistor) |
+| CN10, PB15 (SPI2_MISO) | SDO | MISO - Serial Data Output |
+| CN10, PB14 (SPI2_MOSI) | SDI | MOSI - Serial Data Input |
+| CN10, PB13 (SPI2_CLK) | SCK | SCLK - Serial Clock Input |
+| CN10, PB12 (SPI2_CLK) | CS | SS - Chip Select Input (no internal pu resistor) |
 |  | M1A/B, M2A/B | Motor Coils |
 
-![nucleo-ss-wiring](/assets/img/nucleo-tmc5160.png){: .align-center}
+![nucleo-ss-wiring-spi](/assets/img/nucleo-tmc5160.png){: .align-center}
+
+### NUCLEO/TMC5160-BOB (SPI)
+
+The table of connections is the same as for the StepStick above, while the wiring diagram is provided below.
+
+![nucleo-bob-wiring-spi](/assets/img/nucleo-tmc5160bob-spi.png){: .align-center}
 
 ### NUCLEO/TMC5160-BOB (UART)
 
