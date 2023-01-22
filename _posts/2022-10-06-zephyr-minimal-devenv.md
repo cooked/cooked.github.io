@@ -63,7 +63,7 @@ tar xvf hosttools_linux-x86_64.tar.gz
 ./zephyr-sdk-x86_64-hosttools-standalone-0.9.sh
 ```
 
-**LOCATION** I prefer to install the hosttools locally to the Zephyr SDK (instead of the default /opt/.. on Linux). This is advantageous if you need to use more than one SDK but, if not on the PATH, the full path to the binaries shall be provided. See [Zephyr workflow in VSCode]({% post_url 2023-01-22-zephyr-workflow-vscode %}))
+**LOCATION** I prefer to install the hosttools locally to the Zephyr SDK (instead of the default /opt/.. on Linux). This is advantageous if you need to use more than one SDK but, if not on the PATH, the full path to the binaries shall be provided. See [Zephyr workflow in VSCode])
 {: .notice--info}
 
 ## Minimal Zephyr source (via west Manifest)
