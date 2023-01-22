@@ -41,7 +41,7 @@ tar xvf zephyr-sdk-0.15.1_linux-x86_64_minimal.tar.gz
 
 ### Toolchain(s)  
 
-Most of my projects run non ARM microcontrollers so I will install just the toolchain for **arm-zephyr-eabi** :
+Most of my projects run non ARM microcontrollers so I will install just the toolchain for **arm-zephyr-eabi**:
 
 ``` bash
 cd zephyr-sdk-0.15.1
@@ -50,13 +50,28 @@ tar xvf toolchain_linux-x86_64_arm-zephyr-eabi.tar.gz
 rm toolchain_linux-x86_64_arm-zephyr-eabi.tar.gz
 ```
 
+### Host Tools
+
+The odds are that, on top of building and flashing an application, a developer wants also to debug or simulate it. The Zephyr SDK provides a set of [Host Tools](https://github.com/zephyrproject-rtos/sdk-ng/releases/tag/v0.15.1) for that, which include OpenOCD, QEMU and few others.
+
+```bash
+cd zephyr-sdk-0.15.1
+wget https://github.com/zephyrproject-rtos/sdk-ng/releases/download/v0.15.1/hosttools_linux-x86_64.tar.gz
+tar xvf hosttools_linux-x86_64.tar.gz
+
+# run it
+./zephyr-sdk-x86_64-hosttools-standalone-0.9.sh
+```
+
+**LOCATION** I prefer to install the hosttools locally to the Zephyr SDK (instead of the default /opt/.. on Linux). This is advantageous if you need to use more than one SDK but, if not on the PATH, the full path to the binaries shall be provided. See [Zephyr workflow in VSCode]({% post_url 2023-01-22-zephyr-workflow-vscode %}))
+{: .notice--info}
 
 ## Minimal Zephyr source (via west Manifest)
 
-Another area of optimization is the codebase any Zephyr workspace is initialized to. By default (see Getting Started Guide) the source code for zephyr, bootloader, tools and all modules are installed, using the *manifest file* from the remote default Zephyr repository 
+Another area of optimization is the codebase any Zephyr workspace is initialized to. By default (see Getting Started Guide) the source code for zephyr, bootloader, tools and all modules are installed, using the *manifest file* from the remote default Zephyr repository.
 The entire codebase totals at around **3.7GB**.
 
-A valid alternative to the default manifest, is a custom one, eventually stored locally in the workspace 
+A valid alternative to the default manifest, is a custom one, eventually stored locally in the workspace.
 
 NOTE: the manifest shall be **stored in a workspace subfolder** (e.g. zephyrproject/manifest)
 
