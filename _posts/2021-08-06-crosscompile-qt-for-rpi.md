@@ -6,56 +6,29 @@ header:
     teaser: /assets/img/raspberry_qt_logo.png
 ---
 
-Oftentimes when working on embedded projects it is not recommended (or not even possible) to develop directly on the target hardware, due to limitations of some sort. The Raspberry Pi for example does not offer a lot of computing power, which is why developing graphical interfaces on the Raspberry Pi is rather unpleasant. A much more elegant (and ultimately faster) way is to develop the program on a host PC and then copy it to the Raspberry Pi via a remote connection and then execute.
+## UPDATE 
+I've replaced the manual configuration (command line and scripts) described below with a more automated approach that relies on [Buildroot for the creation of cross-compilation toolchain and target filesystem]().      
 
-The workflow requires more steps, might seem a bit more convoluted and requires to be kept updated, but it is actually a better way to go about the development. There are two key aspects to cross-compiling:
+## Introduction
 
-- the **toolchain**
-- the **target filesystem**
+Oftentimes when working on embedded projects it is not recommended (or not even possible) to develop directly on the target hardware, due to limitations of some sort. The Raspberry Pi, for example, does not offer a lot of computing power, which is why developing graphical interfaces on it is might be quite time consuming. A much more elegant, and ultimately faster, way of developing it is to write and build code on a host PC, then deploy the application to the (target) Raspberry Pi via a remote connection.
 
-- **Resources and External links**  
+The workflow requires more steps and it might seem convoluted at first (it also requires to be kept up to date), but it is actually a better way to go about the whole development process. 
 
-[QT5 Cross compile GUI with buildroot for raspberry pi3](https://youtu.be/5SnXJTwIunY)
+There are two key aspects to cross-compiling:
 
-[buildroot qt5 32bit mesa opengl on raspberry pi 3](https://www.youtube.com/watch?v=soergaJPy64)
+- the **toolchain**, i.e. the set of tools (compiler, linker, etc.) available on the development machine (host) needed to build the source code into binary files for the embedded device (target).
+- 
+- the **target filesystem**, i.e. the set of libraries and other relevant resources representing the target environment of the embedded device
 
-[https://github.com/pbouda/buildroot-qt-dev/tree/master/config](https://github.com/pbouda/buildroot-qt-dev/tree/master/config)
+## TL;DR
+The 
 
-[Cross-compile Qt applications for your Raspberry Pi 3 - 1. Install QtRpi from scratch](https://youtu.be/YYOjdwT5UuQ?list=PLFsidzAJDEbBr3l0BNMDcDQlUM04GRlf2)
-
-[Cross-compile Qt applications for your Raspberry Pi 3 - 2. Configure Qt Creator](https://youtu.be/1d2bh7iUKNc?list=PLFsidzAJDEbBr3l0BNMDcDQlUM04GRlf2)
-
-### Raspberry ROOTFS
-
-have a look here to automate stuff even more [https://github.com/abhiTronix/rpi_rootfs](https://github.com/abhiTronix/rpi_rootfs)
-
-### Raspberry Toolchains
-
-[https://github.com/Pro/raspi-toolchain/](https://github.com/Pro/raspi-toolchain/)
-
-original - [https://www.kampis-elektroecke.de/raspberry-pi/qt/](https://www.kampis-elektroecke.de/raspberry-pi/qt/)
-
-interelectronix (working till a certain steps but uses too old compiler)- [https://www.interelectronix.com/qt-on-the-raspberry-pi-4.html](https://www.interelectronix.com/qt-on-the-raspberry-pi-4.html)
-
-uvinduw (another that is ALMOST working) - [https://github.com/UvinduW/Cross-Compiling-Qt-for-Raspberry-Pi-4](https://github.com/UvinduW/Cross-Compiling-Qt-for-Raspberry-Pi-4)
-
-interelectronix - QtCreator (ok, ut doesn't show then how to start a project, which will fail of course) - [https://www.interelectronix.com/configuring-qt-creator-ubuntu-20-lts-cross-compilation.html](https://www.interelectronix.com/configuring-qt-creator-ubuntu-20-lts-cross-compilation.html)
-
-neuralmotion qtrpi - [https://github.com/neuronalmotion/qtrpi](https://github.com/neuronalmotion/qtrpi)
-
-mechatronicsblog - [https://mechatronicsblog.com/cross-compile-and-deploy-qt-5-12-for-raspberry-pi/](https://mechatronicsblog.com/cross-compile-and-deploy-qt-5-12-for-raspberry-pi/)
-
-[https://www.youtube.com/watch?v=5SnXJTwIunY](https://www.youtube.com/watch?v=5SnXJTwIunY)
-
-[https://medium.com/@au42/the-useful-raspberrypi-cross-compile-guide-ea56054de187](https://medium.com/@au42/the-useful-raspberrypi-cross-compile-guide-ea56054de187)
-
-[https://github.com/Pro/raspi-toolchain]
-
-## WORFKLOW
+## Workflow
 
 the steps below are a combination of all the old links (see above) I found but in the end mostly based on the [https://github.com/abhiTronix/raspberry-pi-cross-compilers/blob/master/QT_build_instructions.md](https://github.com/abhiTronix/raspberry-pi-cross-compilers/blob/master/QT_build_instructions.md)
 
-- **prepare RPI**
+### Prepare Raspberry Pi
 
 TODO: currently installed full system on SD but replace with download+chroot method
 
@@ -107,7 +80,7 @@ chmod 700 ~/.ssh
 chmod 600 ~/.ssh/authorized_keys
 ```
 
-- p**repare PC**
+### Prepare Host
 
 ```bash
 # basic prep
@@ -187,7 +160,9 @@ cd ~/qtrpi4
 rsync -avz --rsync-path="sudo rsync" --delete qt5.15 pi@192.168.1.172:/usr/local
 ```
 
-- **Latest CONFIGURE SUMMARY** (qt5 configured after gstreamer 1.18.4 and opencv 4.5.3 installation)
+### Summary from CONFIGURE 
+
+Note that **qt5** shall be configured after gstreamer 1.18.4 and opencv 4.5.3 installation
     
 ```bash
 Building on: linux-g++ (x86_64, CPU features: mmx sse sse2)
@@ -468,20 +443,22 @@ Prior to reconfiguration, make sure you remove any leftovers from
 the previous build.
 ```
 
-- **finalizing RPI**
+
+### Finalize Raspberry Pi setup
 
 ```bash
 echo /usr/local/qt5.15/lib | sudo tee /etc/ld.so.conf.d/qt5.15.conf
 sudo ldconfig
 ```
 
-- **configure QtCreator PC**
+### Configure QtCreator
+On the host computer.  
 
 following [https://www.interelectronix.com/configuring-qt-creator-ubuntu-20-lts-cross-compilation.html](https://www.interelectronix.com/configuring-qt-creator-ubuntu-20-lts-cross-compilation.html)
 
 adding debugger [https://www.youtube.com/watch?v=1d2bh7iUKNc&list=PLFsidzAJDEbBr3l0BNMDcDQlUM04GRlf2](https://www.youtube.com/watch?v=1d2bh7iUKNc&list=PLFsidzAJDEbBr3l0BNMDcDQlUM04GRlf2)
 
-- **configure Qt project**
+### Configure Qt project
 
 deploy applications (official) - [https://doc.qt.io/qtcreator/creator-deployment-embedded-linux.html](https://doc.qt.io/qtcreator/creator-deployment-embedded-linux.html)
 
@@ -494,7 +471,8 @@ target.path = /home/pi/
 INSTALLS += target
 ```
 
-- FINE TUNE EGLFS (dimensions mainly)
+## Troubleshooting 
+### Fine tune EGLFS
 
 (official) [https://doc.qt.io/qt-5/embedded-linux.html](https://doc.qt.io/qt-5/embedded-linux.html)
 
@@ -511,7 +489,7 @@ QT_QPA_EGLFS_PHYSICAL_HEIGHT =
 QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 ```
 
-- ERRORS / FIXES
+### Error(s) related to DRM
 
 **Could not queue DRM page flip on screen on RaspberryPi**
 
@@ -531,8 +509,45 @@ QT_QPA_EGLFS_ALWAYS_SET_MODE=1
 
 ```
 
-TESTING
+## Testing
 
-- test hardware acceleration
+- TODO: test hardware acceleration
 
-[Logging](https://www.notion.so/Logging-6a6622913e4e47c68e8d1fc75fd8bb27)
+
+## External Resources  
+
+[QT5 Cross compile GUI with buildroot for raspberry pi3](https://youtu.be/5SnXJTwIunY)
+
+[buildroot qt5 32bit mesa opengl on raspberry pi 3](https://www.youtube.com/watch?v=soergaJPy64)
+
+[https://github.com/pbouda/buildroot-qt-dev/tree/master/config](https://github.com/pbouda/buildroot-qt-dev/tree/master/config)
+
+[Cross-compile Qt applications for your Raspberry Pi 3 - 1. Install QtRpi from scratch](https://youtu.be/YYOjdwT5UuQ?list=PLFsidzAJDEbBr3l0BNMDcDQlUM04GRlf2)
+
+[Cross-compile Qt applications for your Raspberry Pi 3 - 2. Configure Qt Creator](https://youtu.be/1d2bh7iUKNc?list=PLFsidzAJDEbBr3l0BNMDcDQlUM04GRlf2)
+
+### About filesystem
+
+have a look here to automate stuff even more [https://github.com/abhiTronix/rpi_rootfs](https://github.com/abhiTronix/rpi_rootfs)
+
+### About toolchains
+
+[https://github.com/Pro/raspi-toolchain/](https://github.com/Pro/raspi-toolchain/)
+
+original - [https://www.kampis-elektroecke.de/raspberry-pi/qt/](https://www.kampis-elektroecke.de/raspberry-pi/qt/)
+
+interelectronix (working till a certain steps but uses too old compiler)- [https://www.interelectronix.com/qt-on-the-raspberry-pi-4.html](https://www.interelectronix.com/qt-on-the-raspberry-pi-4.html)
+
+uvinduw (another that is ALMOST working) - [https://github.com/UvinduW/Cross-Compiling-Qt-for-Raspberry-Pi-4](https://github.com/UvinduW/Cross-Compiling-Qt-for-Raspberry-Pi-4)
+
+interelectronix - QtCreator (ok, ut doesn't show then how to start a project, which will fail of course) - [https://www.interelectronix.com/configuring-qt-creator-ubuntu-20-lts-cross-compilation.html](https://www.interelectronix.com/configuring-qt-creator-ubuntu-20-lts-cross-compilation.html)
+
+neuralmotion qtrpi - [https://github.com/neuronalmotion/qtrpi](https://github.com/neuronalmotion/qtrpi)
+
+mechatronicsblog - [https://mechatronicsblog.com/cross-compile-and-deploy-qt-5-12-for-raspberry-pi/](https://mechatronicsblog.com/cross-compile-and-deploy-qt-5-12-for-raspberry-pi/)
+
+[https://www.youtube.com/watch?v=5SnXJTwIunY](https://www.youtube.com/watch?v=5SnXJTwIunY)
+
+[https://medium.com/@au42/the-useful-raspberrypi-cross-compile-guide-ea56054de187](https://medium.com/@au42/the-useful-raspberrypi-cross-compile-guide-ea56054de187)
+
+[https://github.com/Pro/raspi-toolchain]
