@@ -1,6 +1,4 @@
-#FROM jekyll/jekyll:pages
-#FROM jekyll/jekyll
-FROM ruby:2.7-alpine3.15
+FROM ruby:3.2-alpine3.17
 
 #COPY Gemfile /srv/jekyll/
 
