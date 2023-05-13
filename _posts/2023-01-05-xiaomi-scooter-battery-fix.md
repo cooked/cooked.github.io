@@ -46,5 +46,10 @@ The red LED on the BMS was blinking though, indicating an error with the battery
 
 ## Resources
 
-1. https://www.mearth.com.au/blogs/news/how-to-fix-an-electric-scooter-battery-that-doesn-t-charge
-2. fix a broken battery (incl. broken tabs) https://www.youtube.com/watch?v=uUEI9BMblfc
+1. [mearth.com.au - Fix a battery that doesn't charge](https://www.mearth.com.au/blogs/news/how-to-fix-an-electric-scooter-battery-that-doesn-t-charge)
+2. [YouTube - Fix a broken battery (incl. broken tabs)](https://www.youtube.com/watch?v=uUEI9BMblfc)
+3. [YouTube - Xiaomi M365 Non charging issue easy fix](https://www.youtube.com/watch?v=-Phs61LuaQM)
+4. [YouTube - Xiaomi M365 Battery Issues, Diagnose And Repair](https://www.youtube.com/watch?v=uUEI9BMblfc)
+5. [Reddit - M365 is not charging and has a green light](https://www.reddit.com/r/ElectricScooters/comments/iqt1kv/m365_is_not_charging_and_charger_has_green_light/)
+
+
