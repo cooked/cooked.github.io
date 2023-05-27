@@ -6,6 +6,7 @@ header:
     teaser: /assets/img/raspberry_qt_logo.png
 ---
 
+
 ## UPDATE 
 I've replaced the manual configuration (command line and scripts) described below with a more automated approach that relies on [Buildroot for the creation of cross-compilation toolchain and target filesystem]({% post_url 2022-08-06-raspberry_buildroot_xcompile %}).   
 

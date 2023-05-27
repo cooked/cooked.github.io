@@ -44,6 +44,7 @@ plugins:
 - jekyll-feed
 - jemoji
 - jekyll-include-cache
+#- jekyll-last-modified-at
 #- jekyll-leaflet
 #- jekyll-target-blank # https://github.com/keithmifsud/jekyll-target-blank
 #- jekyll-google-photos

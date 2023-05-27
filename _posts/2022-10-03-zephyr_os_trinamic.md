@@ -10,6 +10,8 @@ header:
     teaser: https://www.allaboutcircuits.com/uploads/articles/TMC5160-stepStick.jpg
 
 excerpt_separator: "<!--more-->"
+
+last_modified_at: 2023-05-27
 ---
 
 Introduction to the Zephyr RTOS driver for the TMC51xx series of motor ICs from [TRINAMIC](https://www.trinamic.com/).
@@ -18,12 +20,69 @@ Introduction to the Zephyr RTOS driver for the TMC51xx series of motor ICs from 
 
 ## State of the art
 
-The driver supports both **SPI and UART** communication protocols. It provides a set of console commands to configure the driver and to run the stepper motor in **velocity or position mode, using the internal ramp generator**. Source code can be downloaded from [GitHub](https://github.com/cooked/zephyr-trinamic).
+The driver supports both **SPI and UART** communication protocols, on top of the **STEP/DIR** signal to control speed and direction rotation. It provides a set of console commands to configure the driver and to run the stepper motor in **velocity or position mode, using the internal ramp generator**. Source code can be downloaded from [GitHub](https://github.com/cooked/zephyr-trinamic).
 
 ### TODOs
 
 - implement the full Sensor API to set/get driver parameters
-- implement step/dir mode
+
+## STEP/DIR interface
+
+The driver relies on the MCU's hardware timers and Zephyr's [PWM API](https://docs.zephyrproject.org/latest/hardware/peripherals/pwm.html) to generate the step pulses to rotate a stepper motor.
+In the devicetree (or overlay) file, at least one PWM node (child of a timer node) shall be enabled.  
+With reference to the [STM32 PWM binding](https://docs.zephyrproject.org/latest/build/dts/api/bindings/pwm/st%2Cstm32-pwm.html#dtbinding-st-stm32-pwm), the PWM period is defined in the *pwms* cell of the TMC (see snippet below).
+
+``` bash
+# STEP/DIR configuration for the ST Nucleo F103
+
+&timers1 {
+    status = "okay";
+    st,prescaler = <100>;
+
+    stepper0: pwm {
+        status = "okay";
+        # PA8 is the step pin, which is attached to TIM1 channel 1 on the F103 
+        pinctrl-0 = < &tim1_ch1_pwm_pa8 >;
+        pinctrl-names = "default";
+    };
+};
+
+&spi2 {
+    #...
+    tmc_0: tmc5160@0 {
+        #...
+        # STEP - pwms cell linked to the pwm defined above, using channel 1 with period 10000ns and in normal polarity
+        pwms = <&stepper0 1 10000 PWM_POLARITY_NORMAL>;
+        # DIR - a simple gpio
+        dir-gpios = <&gpioc 7 GPIO_ACTIVE_HIGH>;    
+        #...
+    };
+};
+```
+
+The driver change the motor speed setting the PWM period and direction:  
+
+``` c
+
+struct tmc_config *cfg = dev->config;
+
+// period (in ns) of the input speed (given in RPM)
+uint32_t period_ns = 1e9 / ( abs(speed) * RPM_TO_PPS);
+
+// set period w/ 50% duty cycle, CW
+if(speed>0) {
+    gpio_pin_set_dt(&cfg->dir,0);
+    pwm_set_dt(&cfg->step, period_ns, (uint32_t)(period_ns/2));
+// set period w/ 50% duty cycle, CCW
+} else if(speed<0) {
+    gpio_pin_set_dt(&cfg->dir,1);
+    pwm_set_dt(&cfg->step, period_ns, (uint32_t)(period_ns/2));
+// stop motion
+} else {
+    pwm_set_pulse_dt(&cfg->step, 0);
+}
+
+```
 
 ## SPI interface
 
@@ -130,7 +189,7 @@ The TMC5160 driver has been tested with the following hardware:
 
 ### NUCLEO/TMC5160-StepStick (SPI)
 
-**HW MOD** Watterott StepStick have the STEP/DIR interface enabled by default. To enable the TMC5160 internal ramp generator apply this **TODO** mod 
+**HW MOD** Watterott StepStick have the STEP/DIR interface enabled by default. To enable the TMC5160 internal ramp generator apply this mod **TODO**
 {: .notice--warning}
 
 **UART** Watterott StepStick does not support UART interface 
@@ -146,6 +205,8 @@ The TMC5160 driver has been tested with the following hardware:
 | CN10, PB14 (SPI2_MOSI) | SDI | MOSI - Serial Data Input |
 | CN10, PB13 (SPI2_CLK) | SCK | SCLK - Serial Clock Input |
 | CN10, PB12 (SPI2_CLK) | CS | SS - Chip Select Input (no internal pu resistor) |
+| CN9, PA8 (TIM1_CH1) | STEP | STEP - Step Input) |
+| CN5, PC7 | DIR | DIR - Direction Input) |
 |  | M1A/B, M2A/B | Motor Coils |
 
 ![nucleo-ss-wiring-spi](/assets/img/nucleo-tmc5160.png){: .align-center}
