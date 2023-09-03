@@ -28,13 +28,6 @@ exclude:
 - '.devcontainer'
 - '*.code-workspace'
 - 'Gemfile*'
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
 
 # https://jekyllrb.com/docs/plugins/installation/
 plugins:
@@ -44,7 +37,6 @@ plugins:
 - jekyll-feed
 - jemoji
 - jekyll-include-cache
-#- jekyll-last-modified-at
 #- jekyll-leaflet
 #- jekyll-target-blank # https://github.com/keithmifsud/jekyll-target-blank
 #- jekyll-google-photos
@@ -86,8 +78,6 @@ analytics:
   google:
     tracking_id: 'G-VG004BYMTP' # 'UA-1061116-2'
     anonymize_ip: false # default
-
-#google_site_verification: "yourVerificationCode"
 
 author:
   name: "A Quarter to Seven"
