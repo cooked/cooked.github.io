@@ -20,7 +20,6 @@ RUN apk --no-cache add \
     libxml2-dev \
     libgcrypt-dev \
     libxslt-dev \
-    #python \
     # pushing to git via ssh
     openssh \
     # permissions to install packages

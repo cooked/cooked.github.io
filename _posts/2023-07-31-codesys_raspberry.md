@@ -17,18 +17,18 @@ How to install and setup CODESYS soft PLC on the Raspberry Pi single-board compu
 
 TODO:
 
-
-
 ## Prepare Raspberry Pi
 
 ### Flash SD
 
-Flash a 32bit raspi OS (lite is ok, but stick to 32, do not use 64bit !!! )… 32bit OS is a requirements for the Control Raspberry MC SL 
+Flash a 32bit raspi OS (lite is ok, but stick to 32, do not use 64bit !!! )… 32bit OS is a requirements for the Control Raspberry MC SL
 
 ### Enable SSH
+
 enable SSH as usual with the .ssh file in the boot partition
 
 ### Configure network
+
 - set a static IP like 192.168.1.69 for the RPi and use a LAN cable to connect the dev PC (stay away from wifi and DHCP for now… to be investigated later)
 
 ```bash
@@ -42,7 +42,6 @@ static ip_address=192.168.1.69/24
 ```
 
 - https://faq.codesys.com/pages/viewpage.action?pageId=153321520
-
 
 ### Bug / Fix
 
@@ -58,8 +57,6 @@ failing to do so will trigger a bug where the RTE does not detect the OS as 32bi
 
 RESTART raspberry??
 
-
-
 ## CODESYS IDE
 
 CODESYS IDE requires a Windows machine to run.
@@ -71,41 +68,41 @@ CODESYS IDE requires a Windows machine to run.
 
 make sure the ethernet port on the dev PC is configured to be some 192.168.1.1 or similar on the same subnet of the rpi (get to the dialog box shown below… changing to Manual IP from elsewhere might not work properly)
 
+![Alt text](../assets/img/codesys-rpi/codesys-rpi-02-network.png)
+
 ### Flash RTE
 
 flash the 4.8.0 RTE… select multicore
 
 then try to scan to find it
 
-TODO: insert scan image
+![Alt text](../assets/img/codesys-rpi/codesys-rpi-03-scan.png)
 
 for now the authentication by the user is mandatory so setup  admin/admin credential for privileged user
 
 (TODO consider disabling it https://faq.codesys.com/pages/viewpage.action?pageId=115834919)
 
-TODO: insert image add device user
+![alt](../assets/img/codesys-rpi/codesys-rpi-04-add-device-user.png)
 
 then go on with the login….(it asks twice)
 
-TODO: insert image user login
+![Alt text](../assets/img/codesys-rpi/codesys-rpi-05-device-user-logon.png)
 
 finally
 
-TODO: insert image device connected
+![Alt text](../assets/img/codesys-rpi/codesys-rpi-06-device-connected.png)
 
 then go on and login
 
-TODO: insert image login to app
+![Alt text](../assets/img/codesys-rpi/codesys-rpi-07-login-app.png)
 
 and again with app compiled and deployed
 
-TODO: 
-
+![Alt text](../assets/img/codesys-rpi/codesys-rpi-08-app-connected.png)
 
 ### Authentication
 
 TODO: describe the many levels of codesys authentications...
-
 
 ### SSH Autentication
 

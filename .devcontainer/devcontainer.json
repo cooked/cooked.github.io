@@ -8,22 +8,14 @@
     "context": "../",
     
     // Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	//"remoteUser": "vscode"
     "remoteUser": "jekyll",
     
     // The optional 'runArgs' property can be used to specify additional runtime arguments.
     "runArgs": [
         "-u", "jekyll",
         "-v", "${env:HOME}/.ssh:/root/.ssh-localhost:ro"
-        //"--rm",
-        //"--volume='../:/srv/jekyll'",
-        //"-p", "4000:4000"
     ],
 
-    "mounts": [
-        //"source=${localWorkspaceFolder}/../../van4two.github.io,target=/workspaces/van4two,type=volume"
-    ],
-	
     // make a list of ports inside the container available locally
 	"forwardPorts": [
 		4000,   // Jekyll server
@@ -41,7 +33,7 @@
         "vscode": {
             //"devPort": {}
             "settings": {
-                "terminal.integrated.defaultProfile.linux": "sh",
+                "terminal.integrated.defaultProfile.linux": "bash",
                 "cSpell.language": "en,it"
             },
             "extensions": [
@@ -50,6 +42,7 @@
                 // liquid templating syntax highlighting
                 "sissel.shopify-liquid",
                 // jekyll
+                //"Dedsec727.jekyll-run",
                 "ginfuru.ginfuru-vscode-jekyll-syntax",
                 "ginfuru.vscode-jekyll-snippets",
                 // markdown
@@ -64,8 +57,7 @@
                 "streetsidesoftware.code-spell-checker-italian",
                 "ms-vscode.wordcount",
                 "ms-vscode.live-server",
-                "stkb.rewrap",
-                "wayou.vscode-todo-highlight"
+                "stkb.rewrap"
             ]
         }
     } 
