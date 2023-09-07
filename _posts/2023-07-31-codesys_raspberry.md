@@ -4,7 +4,7 @@ title: CODESYS on Raspberry Pi, start to finish
 
 tags: [CODESYS, PLC, Linux, IEC 61131]
 # categories: software, hardware, embedded 
-category: software
+#category: software
 
 #header:
 #   teaser: /assets/img/jvscd.png
