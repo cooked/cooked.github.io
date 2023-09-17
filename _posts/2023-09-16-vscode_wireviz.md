@@ -64,5 +64,5 @@ A VSCode code editor tab layout that worked for me is to have the YAML input fil
 
 Here's a list of some of the references used throughout this project:
 
-- WireViz [tutorial](https://github.com/wireviz/WireViz/blob/master/tutorial/readme.md)
-- WireViz [examples](https://github.com/wireviz/WireViz/tree/master/examples)
+- WireViz [syntax](https://github.com/wireviz/WireViz/blob/master/docs/syntax.md)
+- WireViz [tutorial](https://github.com/wireviz/WireViz/blob/master/tutorial/readme.md) and [examples](https://github.com/wireviz/WireViz/tree/master/examples)
