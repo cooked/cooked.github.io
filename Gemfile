@@ -22,6 +22,7 @@ group :jekyll_plugins do
     gem 'jekyll-leaflet'
     gem 'jekyll-contentblocks'
     gem 'jekyll-target-blank'       # open external links in new window
+    gem 'jekyll-spaceship'
     #gem "jekyll-last-modified-at"   # last update of a post
     #gem 'jekyll-toc'
     #gem 'jekyll-archives'

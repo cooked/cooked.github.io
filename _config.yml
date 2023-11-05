@@ -37,6 +37,7 @@ plugins:
 - jekyll-feed
 - jemoji
 - jekyll-include-cache
+- jekyll-spaceship
 #- jekyll-leaflet
 #- jekyll-target-blank # https://github.com/keithmifsud/jekyll-target-blank
 #- jekyll-google-photos

@@ -47,6 +47,9 @@
                 "ginfuru.vscode-jekyll-snippets",
                 // markdown
                 "yzhang.markdown-all-in-one",
+                "TakumiI.markdowntable",
+                "bierner.markdown-yaml-preamble",
+                "bierner.markdown-mermaid",
                 "davidanson.vscode-markdownlint",
                 // html/css
                 "ecmel.vscode-html-css",
