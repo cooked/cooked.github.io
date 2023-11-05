@@ -65,8 +65,8 @@ TODO: add picture
 | :---------- | :----------|
 | **slot**    | Conventional motor's slots are mechanical features of the stator, resembling teeth, which allow for the motor windings to be wound onto. In a KiMotor PCB, the slot is the way the "active" area of the stator is partitioned (it spans an angle of *2\*pi/n_slots*) |
 | **coil**    | Series of turns made up of PCB tracks, either straight lines or arcs, all contained onto a single PCB layer |
-| **winding** | Motor windings are loops of copper wire, packed together to achieve high copper density for a given volume (around one or more motor slot). In KiMotor current version of KiMotor only supports concentrated windings, so each winding is fully contained inside a single slot.|
-| **rings** | A **ring**, or **phase ring** is a circular area laying between  loops of copper wire, packed together to achieve high copper density for a given volume (around one or more motor slot). In KiMotor current version of KiMotor only supports concentrated windings, so each winding is fully contained inside a single slot.|
+| **winding** | Motor windings are loops of copper wire, packed together to achieve high copper density for a given volume (around one or more motor slot). In KiMotor a winding is a multi-layer stack of coils. The current version of KiMotor only supports concentrated windings, so each winding is fully contained inside a single slot.|
+| **rings** | A **ring**, or **phase ring** are circular areas laying between the motor windings and the motor shaft bore. They contain arc tracks and junctions that connects multiple windings to form a motor phase. |
 | **waypoints** | Locations in the XY-plane used to define the shape of a coil |
 | | |
 
