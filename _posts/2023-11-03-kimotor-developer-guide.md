@@ -5,7 +5,7 @@ tags: [KiCad, Python, PCB]
 #category: software
 header:
     teaser: /assets/img/kimotor/kimotor_coil_wp.png
-mermaid: true
+use_mermaid: true
 ---
 
 KiMotor plugin explained from a developer's point of view
@@ -14,10 +14,9 @@ KiMotor plugin explained from a developer's point of view
 
 [KiMotor](https://github.com/cooked/kimotor) automates the design of PCB motors. The process is controlled by a set of parameters that a user can provide via a [wxPython](https://wxpython.org/index.html) GUI, designed with [wxformbuilder](https://github.com/wxFormBuilder/wxFormBuilder). The parameters describe the features of the PCB motor that are created according to the following workflow:
 
-```mermaid!
-
+<div class="mermaid">
 flowchart LR
-  
+
   A["Generate"] --> get_parameters
 
   subgraph get_parameters
@@ -53,7 +52,7 @@ flowchart LR
 
   board --> S("do_silkscreen")
 
-```
+</div>
 
 ## Definitions
 
