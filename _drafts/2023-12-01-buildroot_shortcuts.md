@@ -12,24 +12,23 @@ tag: [Buildroot, Linux, Kconfig]
 #    teaser: /assets/img/buildroot_rpi_logo.jpg
 ---
 
-Some of the most useful takeaways from [Buildroot official manual](https://buildroot.org/downloads/manual/manual.html).
+Some of the most useful takeaways from the [Buildroot official manual](https://buildroot.org/downloads/manual/manual.html).
 
 ## Get Buildroot
 
-This is not necessarily from the manual, but it's a good starting point:
+Just the kick-off to start the whole journey with the Buildroot latest stable release:
 
 ```bash
 git clone https://github.com/buildroot/buildroot.git
-# checkout latest stable release
+# checkout latest stable release 
 cd buildroot
 git fetch --all --tags
-git checkout <xxxx.yy>
+git checkout <yyyy.mm>
 ```
 
-The steps above will get you the latest stable buildroot code in a detached head. This is fine if you're "just using" buildroot for your builds, without contributing back
+The steps above will put you in a detached head, which is fine if you're "just using" buildroot for your builds, without contributing back.
 
 ## Build out-of-tree
-
 
 ```bash
 cd buildroot
