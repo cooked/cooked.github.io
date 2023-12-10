@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Raspberry Pi Linux Real Time Kernel with Buildroot 
+title: Raspberry Pi Linux Real Time Kernel (and more) with Buildroot
 description: RPi x-compile
 
 toc: true
@@ -22,14 +22,41 @@ Fast-forward 2023 I think I got the recipe right, and since I will jump to anoth
 
 ## TL;DR
 
-Refer to the buildroot configuration in
+TODO: Refer to the buildroot configuration in ....
 
-Run the following
+
+## Set up Buildroot
+
+## Kernel RT
+
+## Custom users
+
+## Wi-Fi 
+
+### Default buildroot raspberrypi4_defconfig 
+
+On top of the default buildroot (2023.11) config, the following settings enabled the wifi:
 
 ```bash
-# build the raspberry img
-make
+# change to mdev
+BR2_ROOTFS_DEVICE_CREATION_DYNAMIC_MDEV=y
+
+# add missing RPi firmware
+BR2_PACKAGE_BRCMFMAC_SDIO_FIRMWARE_RPI=y
+BR2_PACKAGE_BRCMFMAC_SDIO_FIRMWARE_RPI_WIFI=y
+BR2_PACKAGE_RPI_FIRMWARE=y
+BR2_PACKAGE_RPI_FIRMWARE_VARIANT_PI4=y
+
+#
+BR2_PACKAGE_DROPBEAR=y
+BR2_PACKAGE_IWD=y
 ```
+
+Here iwd is preferred to the wpa_supplicant. 
+
+see reason here:
+
+
 
 ``` bash
 cd ~/buildroot
@@ -49,3 +76,4 @@ then fix the simlinks running the relocator script
 cd rpi-buildroot-sdk
 ./relocate-sdk.sh
 ```
+
