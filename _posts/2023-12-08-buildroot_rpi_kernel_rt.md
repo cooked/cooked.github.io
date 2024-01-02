@@ -41,7 +41,7 @@ BR2_LINUX_KERNEL_DEFCONFIG="bcm2711"
 BR2_LINUX_KERNEL_CONFIG_FRAGMENT_FILES="../buildroot-bfg/board/linux-rt.config"
 ```
 
-![Alt text](../assets/img/buildroot-rpi/buildroot-rpi-kernel.png)
+[![](../assets/img/buildroot-rpi/buildroot-rpi-kernel.png)](../assets/img/buildroot-rpi/buildroot-rpi-kernel.png)
 
 Also align the toolchain header files:
 
@@ -49,7 +49,7 @@ Also align the toolchain header files:
 BR2_PACKAGE_HOST_LINUX_HEADERS_CUSTOM_5_10=y
 ```
 
-![Alt text](../assets/img/buildroot-rpi/buildroot-rpi-kernel-toolchain.png)
+[![](../assets/img/buildroot-rpi/buildroot-rpi-kernel-toolchain.png)](../assets/img/buildroot-rpi/buildroot-rpi-kernel-toolchain.png)
 
 
 

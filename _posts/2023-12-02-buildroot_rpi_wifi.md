@@ -34,7 +34,7 @@ BR2_PACKAGE_RPI_FIRMWARE=y
 BR2_PACKAGE_RPI_FIRMWARE_VARIANT_PI4=y
 ```
 
-![Alt text](../assets/img/buildroot-rpi/buildroot-rpi-firmware.png)
+[![](../assets/img/buildroot-rpi/buildroot-rpi-firmware.png)](../assets/img/buildroot-rpi/buildroot-rpi-firmware.png)
 
 The **brcmfmac** drivers alone however, will not get us quite there. If you try to build and run the system now, it will show no dmesg about the driver.  
 
@@ -50,7 +50,7 @@ will set the following value:
 BR2_ROOTFS_DEVICE_CREATION_DYNAMIC_MDEV=y
 ```
 
-![Alt text](../assets/img/buildroot-rpi/buildroot-rpi-mdev.png)
+[![](../assets/img/buildroot-rpi/buildroot-rpi-mdev.png)](../assets/img/buildroot-rpi/buildroot-rpi-mdev.png)
 
 For some more insights refer to [6.2. /dev management](https://buildroot.org/downloads/manual/manual.html#_dev_management).
 
@@ -89,7 +89,7 @@ Then the user file must be added to the configuration:
 BR2_ROOTFS_USERS_TABLES="$(BR2_EXTERNAL)/board/users.txt"
 ```
 
-![Alt text](../assets/img/buildroot-rpi/buildroot-rpi-users.png)
+[![](../assets/img/buildroot-rpi/buildroot-rpi-users.png)](../assets/img/buildroot-rpi/buildroot-rpi-users.png)
 
 **Watch out!** Each line MUST be terminated and MUST be terminated right, which is each line having a trailing **\n**, and the last line being an empty one.
 {: .notice--info}
