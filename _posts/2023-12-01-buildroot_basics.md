@@ -55,11 +55,20 @@ touch external.desc
 touch Config.in 
 touch external.mk
 ```
+Let Buildroot know about the ext folder setting the BR2_EXTERNAL variable:
 
-See [9.2. Keeping customizations outside of Buildroot](https://buildroot.org/downloads/manual/manual.html#outside-br-custom).
+```bash
+make BR2_EXTERNAL=/path/to/ext/folder menuconfig # exit without saving
+```
+
+**Note!** If building **out-of-tree** run the above commands from the Buildroot output folder.
+{: .notice--success}
 
 **Note!** A relative path is interpreted relative to the main Buildroot source directory, not to the Buildroot output directory.
 {: .notice--info}
+
+See [9.2. Keeping customizations outside of Buildroot](https://buildroot.org/downloads/manual/manual.html#outside-br-custom).
+
 
 ## Work with config
 
@@ -67,7 +76,13 @@ See [9.2. Keeping customizations outside of Buildroot](https://buildroot.org/dow
 # list configurations
 make list-defconfigs
 
-# save configurations (specifying the path make sure to override whatever path is defined in the current .config)
+# load one of the available configurations (then edit it)
+make rpi4_defconfig
+make menuconfig
+
+# save at the location specified in .config
+make savedefconfig
+# or save overriding the location
 make BR2_DEFCONFIG=<whatever/path/to/file_defconfig> savedefconfig
 ```
 
