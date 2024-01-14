@@ -94,3 +94,5 @@ Here's a list of some of the references used throughout this project:
 - Jupyter Notebooks in VScode [link]()
 - jupyter-devbox [GitHub repository](https://github.com/jakoch/jupyter-devbox)
 - Jupyter Docker Stacks [official documentation](https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html)
+- Allison Thackston [VSCode, Docker, and Github Pages](https://www.allisonthackston.com/articles/vscode-docker-github-pages.html)
+- Allison Thackston [Github Pages Workspace Template](https://github.com/athackst/vscode_website_workspace)
