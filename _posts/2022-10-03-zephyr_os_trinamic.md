@@ -18,6 +18,19 @@ Introduction to the Zephyr RTOS driver for the TMC51xx series of motor ICs from 
 
 <!--more-->
 
+## Dependencies
+
+A fork of the [TMC-API](https://github.com/cooked/TMC-API) is used, for reusability of the header files and definitions published and maintained by [Trinamic (now ADI)](https://www.analog.com/en/lp/001/trinamic-support.html).
+The fork is needed since Zephyr-related PRs have been repeatedly rejected by the company (see [#31](https://github.com/analogdevicesinc/TMC-API/pull/31), [#52](https://github.com/analogdevicesinc/TMC-API/pull/52)).
+
+When the [zephyr-trinamic](https://github.com/cooked/zephyr-trinamic) module is used in an application, the TMC-API dependency is pulled-in automatically via the [project manifest](https://github.com/cooked/zephyr-trinamic/blob/master/west.yml).
+
+The fork simply add few CMake and config files to enable to build it in Zephyr:
+
+- [CMakeLists.txt](https://github.com/cooked/TMC-API/blob/zephyr/CMakeLists.txt)
+- [Kconfig.trinamic](https://github.com/cooked/TMC-API/blob/zephyr/Kconfig.trinamic)
+- [zephyr/module.yml](https://github.com/cooked/TMC-API/blob/zephyr/zephyr/module.yml)
+
 ## State of the art
 
 The driver supports both **SPI and UART** communication protocols, on top of the **STEP/DIR** signal to control speed and direction rotation. It provides a set of console commands to configure the driver and to run the stepper motor in **velocity or position mode, using the internal ramp generator**. Source code can be downloaded from [GitHub](https://github.com/cooked/zephyr-trinamic).
