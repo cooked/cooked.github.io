@@ -35,14 +35,8 @@ plugins:
 - jekyll-sitemap
 - jekyll-gist
 - jekyll-feed
-- jemoji
 - jekyll-include-cache
-#- jekyll-mermaid
-#- jekyll-spaceship
-#- jekyll-leaflet
-#- jekyll-target-blank # https://github.com/keithmifsud/jekyll-target-blank
-#- jekyll-google-photos
-#- jekyll-maps
+- jekyll-target-blank # https://github.com/keithmifsud/jekyll-target-blank
 
 jekyll-archives:
   enabled: [year, month, tags]
