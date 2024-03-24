@@ -19,10 +19,9 @@ How to use Buildroot to create a minimal Linux system with fully preemptible ker
 
 Jump straight to the Buildroot [config file](https://github.com/cooked/buildroot-ext/tree/master/configs).
 
-## Introduction
-As a developer, I’ve often encountered situations where I needed a real-time-capable system. Whether it’s for work or personal projects, having a responsive and predictable system is crucial. Recently, I delved into the world of real-time Linux kernels, specifically using the PREEMPT-RT patch. In this blog post, I’ll share my journey and provide step-by-step instructions for patching the Linux kernel with PREEMPT-RT using Buildroot.
+## Introduction to real-time kernel
 
-## Real-time kernel
+As a developer, I’ve often encountered situations where I needed a real-time-capable system. Whether it’s for work or personal projects, having a responsive and predictable system is crucial. Recently, I delved into the world of real-time Linux kernels, specifically using the PREEMPT-RT patch. In this blog post, I’ll share my journey and provide step-by-step instructions for patching the Linux kernel with PREEMPT-RT using Buildroot.
 
 Real-time (RT) systems are designed to meet strict timing requirements, ensuring that tasks are executed within specific time constraints. These systems are critical for applications such as industrial automation, robotics, automotive control, and audio/video streaming.
 
@@ -62,14 +61,14 @@ PATCHLEVEL = 10
 SUBLEVEL = 63
 ```
 
-In hindsight, the reason to roll back to an older stable tag is that I couldn't find a proper PREEMPT_RT patch for the later kernel that Buildroot was defaulting to. 
+**OLDER KERNEL** - In hindsight, the reason to roll back to an older stable tag is that I couldn't find a proper PREEMPT_RT patch for the later kernel that Buildroot was defaulting to. 
 {: .notice--info}
 
 ### PREEMPT_RT patch source 
 
 Once the kernel version is known, a proper PREEMPT_RT patch can be identified from the official list at [The Linux Foundation - PREEMPT_RT patch versions](https://wiki.linuxfoundation.org/realtime/preempt_rt_versions).
 
-**Matching version** - The ideal patch would have version, patchlevel and sublevel all matching. In my case **I was able to match only version and patchlevel**, then I picked the latest patch sublevel older than the kernel sublevel, and with a stable RT version (i.e., not rc, or release candidate), which points to [**5.10.59-rt52**](https://cdn.kernel.org/pub/linux/kernel/projects/rt/5.10/older/patch-5.10.59-rt52.patch.xz).
+**MATCHING VERSION** - The ideal patch would have version, patchlevel and sublevel all matching. In my case **I was able to match only version and patchlevel**, then I picked the latest patch sublevel older than the kernel sublevel, and with a stable RT version (i.e., not rc, or release candidate), which points to [**5.10.59-rt52**](https://cdn.kernel.org/pub/linux/kernel/projects/rt/5.10/older/patch-5.10.59-rt52.patch.xz).
 {: .notice--info}
 
 ```bash
@@ -97,14 +96,14 @@ BR2_LINUX_KERNEL_CONFIG_FRAGMENT_FILES="$(BR2_EXTERNAL)/board/raspberrypi-rt/lin
 BR2_PACKAGE_HOST_LINUX_HEADERS_CUSTOM_5_10=y
 ```
 
-Keeping the RT flag in a separate file has the advantage that we don't have to issue the **make linux-config** command manually. Buildroot automatically applies the RT config flag, only after the kernel has been patched (i.e., only when the RT config flag is actually available, since before the patch it is not). The kernel fragment file is a one liner:
+Keeping the RT flag in a separate file has the advantage that we don't have to issue the **make linux-menuconfig** command manually. Buildroot automatically applies the RT config flag, only after the kernel has been patched (i.e., only when the RT config flag is actually available, since before the patch it is not). The kernel fragment file is a one liner:
 
 ```bash
 # enable full preemption
 CONFIG_PREEMPT_RT=y
 ```
 
-**Buildroot** - If you don't have Buildroot installed you can follow the setup steps (and a shortlist of useful commands) described in [Buildroot basics]({{ site.baseurl }}/buildroot_basics)
+**BUILDROOT** - If you don't have Buildroot installed you can follow the setup steps (and a shortlist of useful commands) described in [Buildroot basics]({{ site.baseurl }}/buildroot_basics)
 {: .notice--info}
 
 [![](../assets/img/buildroot-rpi/buildroot-rpi-kernel.png)](../assets/img/buildroot-rpi/buildroot-rpi-kernel.png)
