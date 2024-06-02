@@ -101,7 +101,20 @@ https://buildroot.org/downloads/manual/manual.html#customize-users
 make
 ```
 
-TODO: read manual and summarize
+```bash
+# rebuild a package 
+rm -rf output/build/<package_name>
+make
+```
+
+```bash
+# clean only the target  
+rm -rf output/target
+find output/ -name ".stamp_target_installed" -delete
+rm -f output/build/host-gcc-final-*/.stamp_host_installed
+```
+
+
 
 ## Build and Export the toolchain
 
