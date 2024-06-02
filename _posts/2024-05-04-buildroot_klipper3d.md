@@ -115,3 +115,8 @@ The porting of [KlipperScreen](https://klipperscreen.readthedocs.io/en/latest/) 
 BusyBox, on which Buildroot is based, provides its [own ip command](https://linux.die.net/man/1/busybox) that does not include the option for JSON output.
 
 As a consequence [Mainsail](https://docs.mainsail.xyz/), which relies on the Moonraker server, is also not supported.
+
+## References
+
+- [GNU Arm Embedded Toolchain Downloads (up to 10.3, deprecated)](https://developer.arm.com/downloads/-/gnu-rm) 
+- [Arm GNU Toolchain (after 10.3)](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads)
